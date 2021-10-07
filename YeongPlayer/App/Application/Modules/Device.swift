@@ -1,8 +1,23 @@
 //
 //  Device.swift
-//  YeongPlayer
+//  iosWork
 //
-//  Created by inforex on 2021/09/17.
+//  Created by cschoi724 on 06/03/2019.
+//  Copyright © 2019 Inforex. All rights reserved.
 //
 
-import Foundation
+
+
+struct DeviceInfos {
+    var UUID = ""
+    var SYSTEM_VERSION = ""
+    var TOKEN_ID = ""
+    var APP_VERSION = ""
+    var USER_AGENT = ""
+    var USER_AGENT_MODIFY = ""
+}
+
+class Device {
+    var info : DeviceInfos = DeviceInfos()
+    
+}

@@ -12,9 +12,21 @@ import RxSwift
 extension VideoChatView {
     
     func bind() {
+        chatSend.isEnabled = false
+        
+        let chatView_tap = UITapGestureRecognizer()
+        chatCollectionView.addGestureRecognizer(chatView_tap)
+        
+        chatView_tap.rx.event
+            .bind { (_) in
+                self.chatView.isHidden = true
+                self.chatTextField.resignFirstResponder()
+            }.disposed(by: bag)
+        
         chat.rx.tap
             .bind {
-                self.loadingIndicator.stopAnimating()
+                self.chatView.isHidden = false
+                self.chatTextField.becomeFirstResponder()
             }.disposed(by: bag)
         
         mic.rx.tap
@@ -40,6 +52,7 @@ extension VideoChatView {
         
         mineViewBtn.rx.tap
             .bind {
+                self.myView.isHidden = !self.myView.isHidden
                 self.mineViewBtn.isSelected = !self.mineViewBtn.isSelected
             }.disposed(by: bag)
         

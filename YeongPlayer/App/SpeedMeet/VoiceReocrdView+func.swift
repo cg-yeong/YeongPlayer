@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 import Lottie
+import Photos
 
 extension VoiceRecordView {
     
@@ -156,6 +157,73 @@ extension VoiceRecordView {
         self.audioPlayer = nil
         self.nowRecordState = .ready
         self.setRecordView(self.nowRecordState)
+    }
+    
+    func sendFile() {
+        self.audioConverter()
+    }
+    
+    func audioConverter() {
+        // indicator on, startAnimation()
+        DispatchQueue.global().async {
+            if self.audioPlayer == nil { return }
+            
+            let recordingFilePath_mp3 = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("\(String(Int(Date().timeIntervalSince1970))).mp3")
+            
+            // convert m4a -> mp3
+            let converter = ExtAudioConverter()
+            converter.inputFile = self.audioPlayer?.url?.path
+            converter.outputFile = recordingFilePath_mp3.absoluteString.replacingOccurrences(of: "file://", with: "")
+            converter.outputSampleRate = 44100
+            converter.outputNumberChannels = 2
+            converter.outputFormatID = kAudioFormatMPEGLayer3
+            converter.outputFileType = kAudioFormatMPEGLayer3
+            converter.convert()
+            
+            if let audioData = try? Data(contentsOf: recordingFilePath_mp3, options: .mappedRead) {
+                Utility.delayExecute(0) {
+                    Toast.showOnXib("보내는 거 아직 구현 안했음")
+                }
+            } else {
+                DispatchQueue.main.async {
+                    Toast.showOnXib("녹음한 파일이 존재 안함 \n다시 녹음해줘", duration: 2.0)
+                }
+                
+                self.close()
+            }
+            
+        }
+    }
+    
+    func close() {
+        recordTimer?.invalidate()
+        if recordTimer != nil {
+            recordTimer = nil
+        }
+        audioRecorder?.stop()
+        audioRecorder = nil
+        audioPlayer?.stop()
+        audioPlayer = nil
+        
+//        removeFromSuperview()
+//        UIApplication.shared.isIdleTimerDisabled = false
+//        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func sendMessage() {
+        let trimmedMsg = txtInput.text?.trimmingCharacters(in: .whitespaces)
+        if trimmedMsg?.isEmpty == false {
+            chatData.append(MsgModel(status: ChatCell, record: nil, chat: trimmedMsg))
+        }
+        
+        txtInput.text = ""
+        chatCollectionView.reloadData()
+    }
+    
+    
+    func setFetchPhoto() {
+        self.fetchResults = PHAsset.fetchAssets(with: nil)
+        self.photoCollectionView.reloadData()
     }
     
 }

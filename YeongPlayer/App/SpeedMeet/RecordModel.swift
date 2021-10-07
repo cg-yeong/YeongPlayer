@@ -30,6 +30,7 @@ class RecordModel {
     }
     
     func setData() {
+        
         minSec = "1"
         maxSec = "600"
     }

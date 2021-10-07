@@ -11,7 +11,7 @@ extension VoiceRecordView {
     
     func addObserver() {
         let tapv = UITapGestureRecognizer(target: self, action: #selector(taptapv))
-        self.addGestureRecognizer(tapv)
+        chatCollectionView.addGestureRecognizer(tapv)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
@@ -26,7 +26,8 @@ extension VoiceRecordView {
             if let window = UIApplication.shared.windows.first {
                 let bottomPadding = window.safeAreaInsets.bottom
                 self.stopAudio()
-                self.btnInputView.isHidden = true
+                self.recordIntputView.isHidden = true
+                self.albumInputView.isHidden = true
                 UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut) {
                     self.keyboardConstraint.constant = keyboardSize.height - bottomPadding
                     log.d(self.keyboardConstraint.constant)
@@ -61,7 +62,8 @@ extension VoiceRecordView {
         
         self.stopAudio()
         UIView.animate(withDuration: 0.25) {
-            self.btnInputView.isHidden = true
+            self.recordIntputView.isHidden = true
+            self.albumInputView.isHidden = true
             self.keyboardConstraint.constant = 0
             self.layoutIfNeeded()
         }

@@ -34,7 +34,7 @@ class XibView: UIView {
         guard let xibName = NSStringFromClass(self.classForCoder).components(separatedBy: ".").last else { return }
         if let view = Bundle.main.loadNibNamed(xibName, owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
-            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
             self.addSubview(view)
         }
     }

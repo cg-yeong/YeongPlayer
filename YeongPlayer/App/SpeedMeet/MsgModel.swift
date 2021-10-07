@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct MsgModel {
+    
+    var status: String = ""
+    var record: RecordModel?
+    var chat: String?
+    
+}

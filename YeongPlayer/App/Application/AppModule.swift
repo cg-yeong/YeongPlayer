@@ -1,8 +1,20 @@
 //
 //  AppModule.swift
-//  YeongPlayer
+//  iosYeoboya
 //
-//  Created by inforex on 2021/09/17.
+//  Created by cschoi724 on 04/09/2019.
+//  Copyright © 2019 Inforex. All rights reserved.
 //
 
 import Foundation
+
+class AppModule{
+    var cache : Cache = Cache()
+    var device : Device = Device()
+    var shared : Shared = Shared()
+    var cookie : Cookie = Cookie()
+    var common : Common = Common()
+    var presenter : Presenter = Presenter()
+}
+
+

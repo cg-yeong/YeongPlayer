@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+extension VideoChatView {
+    
+    var ChatCell: String { return "ChatCell" }
+    var NoticeCell: String { return "NoticeCell" }
+    var MissionCell: String { return "MissionCell" }
+    var PhotoCell: String { return "PhotoCell" }
+    
+}

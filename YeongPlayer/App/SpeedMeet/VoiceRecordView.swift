@@ -9,18 +9,23 @@ import UIKit
 import RxSwift
 import Lottie
 import AVFoundation
+import Photos
 
 class VoiceRecordView: XibView {
     
     @IBOutlet weak var mainView: UIView!
     
-    @IBOutlet weak var btnInputView: UIView!
+    @IBOutlet weak var recordIntputView: UIView!
+    @IBOutlet weak var albumInputView: UIView!
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
     @IBOutlet weak var userContentArea: UIView!
     
     @IBOutlet weak var chatContainerView: UIView!
     @IBOutlet weak var chatCollectionView: UICollectionView!
+    
+    @IBOutlet weak var photoCollectionView: UICollectionView!
+    @IBOutlet weak var getMediaAlbum: UIButton!
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var moreBtn: UIButton!
@@ -36,6 +41,7 @@ class VoiceRecordView: XibView {
     @IBOutlet weak var recordingBtn: UIButton!
     @IBOutlet weak var noticeLabel: UILabel!
     @IBOutlet weak var txtInput: UITextField!
+    @IBOutlet weak var fileAlbum: UIButton!
     
     @IBOutlet weak var pumpLottieView: UIView!
     @IBOutlet weak var progressBarView: UIView!
@@ -51,7 +57,7 @@ class VoiceRecordView: XibView {
     var waveLottie = AnimationView()
     var pumpLottie = AnimationView()
     
-    
+    var chatData = [MsgModel]()
     
     let bag = DisposeBag()
     
@@ -60,6 +66,9 @@ class VoiceRecordView: XibView {
     var audioRecorder: AVAudioRecorder?
     var recordTimer: Timer?
     
+    // 사진 - 
+    var fetchResults: PHFetchResult<PHAsset>!
+    let imageManager: PHCachingImageManager = PHCachingImageManager()
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -79,15 +88,18 @@ class VoiceRecordView: XibView {
         initProgressView()
         setRecordView(nowRecordState)
         
+        setFetchPhoto()
+        
     }
     
     func setView() {
         buttonColor()
         recordingBtn.layer.cornerRadius = recordingBtn.frame.width / 2
-
+        
         UIApplication.shared.isIdleTimerDisabled = true
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption(_:)), name: AVAudioSession.interruptionNotification, object: nil)
         
+        setCollectionView()
     }
     
     func buttonColor() {
@@ -123,10 +135,6 @@ class VoiceRecordView: XibView {
     }
     
     func initRecord() {
-//        recon = RecordContainerView()
-//        recon.frame = recordingContainerView.frame
-//        recon.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        recordingContainerView.insertSubview(recon, at: 0)
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)

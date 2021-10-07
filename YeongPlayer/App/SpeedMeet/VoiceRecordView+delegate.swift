@@ -18,6 +18,8 @@ extension VoiceRecordView: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
             
             if audioRecorder != nil {
                 self.audioPlayer = try? AVAudioPlayer(contentsOf: audioRecorder!.url)
+                log.d(audioRecorder?.url)
+                
             }
         } else {
             log.s("Stopping audio recording failed")
