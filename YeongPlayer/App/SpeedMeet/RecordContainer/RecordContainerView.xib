@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordContainerView" customModule="YeongPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="reRecordBtn" destination="e6D-AO-djb" id="Klv-xE-0CY"/>
+                <outlet property="recordSendBtn" destination="feg-Oz-Lh4" id="gnA-OD-iIN"/>
+                <outlet property="recordingBtn" destination="RSL-SX-a7Z" id="aeC-DC-h2W"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="chP-W0-GnT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkT-Sh-Ep6">
+                    <rect key="frame" x="0.0" y="323" width="414" height="250"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSL-SX-a7Z">
+                            <rect key="frame" x="162" y="100" width="90" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="90" id="56q-TK-ntc"/>
+                                <constraint firstAttribute="width" constant="90" id="koq-GE-cod"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal">
+                                <imageReference key="image" image="mic" catalog="system" symbolScale="large"/>
+                            </state>
+                            <state key="selected">
+                                <imageReference key="image" image="stop.fill" catalog="system" symbolScale="large"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feg-Oz-Lh4">
+                            <rect key="frame" x="302" y="125" width="60" height="40"/>
+                            <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="JEN-Vg-HIa"/>
+                                <constraint firstAttribute="width" constant="60" id="RbW-ZD-CuY"/>
+                            </constraints>
+                            <state key="normal" title="보내기">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="17"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-AO-djb">
+                            <rect key="frame" x="52" y="125" width="60" height="40"/>
+                            <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="UJ4-4b-iFd"/>
+                                <constraint firstAttribute="width" constant="60" id="Vme-5G-ALF"/>
+                            </constraints>
+                            <state key="normal" title="다시">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="17"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버튼을 눌러 녹음을 시작해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-Cl-w1K">
+                            <rect key="frame" x="95" y="30" width="224" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RSL-SX-a7Z" firstAttribute="centerX" secondItem="mkT-Sh-Ep6" secondAttribute="centerX" id="1gJ-3q-KDV"/>
+                        <constraint firstItem="feg-Oz-Lh4" firstAttribute="centerY" secondItem="RSL-SX-a7Z" secondAttribute="centerY" id="Buz-xc-D7i"/>
+                        <constraint firstItem="e6D-AO-djb" firstAttribute="centerY" secondItem="RSL-SX-a7Z" secondAttribute="centerY" id="CtT-qb-1x6"/>
+                        <constraint firstItem="RSL-SX-a7Z" firstAttribute="leading" secondItem="e6D-AO-djb" secondAttribute="trailing" constant="50" id="Zs6-Pn-uFK"/>
+                        <constraint firstItem="RSL-SX-a7Z" firstAttribute="centerY" secondItem="mkT-Sh-Ep6" secondAttribute="centerY" constant="20" id="ajC-OF-nAB"/>
+                        <constraint firstAttribute="height" constant="250" id="dPo-Us-oXO"/>
+                        <constraint firstItem="feg-Oz-Lh4" firstAttribute="leading" secondItem="RSL-SX-a7Z" secondAttribute="trailing" constant="50" id="i0W-Xd-Gx3"/>
+                        <constraint firstItem="EAC-Cl-w1K" firstAttribute="centerX" secondItem="mkT-Sh-Ep6" secondAttribute="centerX" id="rR3-Us-CRD"/>
+                        <constraint firstItem="EAC-Cl-w1K" firstAttribute="top" secondItem="mkT-Sh-Ep6" secondAttribute="top" constant="30" id="xzh-Kd-5cI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="y75-wn-Ynn"/>
+            <color key="backgroundColor" systemColor="linkColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mkT-Sh-Ep6" secondAttribute="trailing" id="APw-Y6-UQQ"/>
+                <constraint firstItem="mkT-Sh-Ep6" firstAttribute="centerY" secondItem="chP-W0-GnT" secondAttribute="centerY" id="WI6-cn-a9t"/>
+                <constraint firstItem="mkT-Sh-Ep6" firstAttribute="centerX" secondItem="chP-W0-GnT" secondAttribute="centerX" id="mYq-vT-mPI"/>
+                <constraint firstItem="mkT-Sh-Ep6" firstAttribute="leading" secondItem="chP-W0-GnT" secondAttribute="leading" id="th3-qz-ABO"/>
+            </constraints>
+            <point key="canvasLocation" x="816" y="113"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mic" catalog="system" width="108" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
