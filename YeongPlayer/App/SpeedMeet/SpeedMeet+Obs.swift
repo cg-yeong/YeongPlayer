@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 extension VoiceRecordView {
     
@@ -15,6 +16,7 @@ extension VoiceRecordView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        PHPhotoLibrary.shared().register(self)
     }
     
     

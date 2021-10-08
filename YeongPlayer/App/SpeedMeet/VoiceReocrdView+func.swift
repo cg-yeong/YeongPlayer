@@ -222,7 +222,9 @@ extension VoiceRecordView {
     
     
     func setFetchPhoto() {
-        self.fetchResults = PHAsset.fetchAssets(with: nil)
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        self.fetchResults = PHAsset.fetchAssets(with: fetchOptions)
         self.photoCollectionView.reloadData()
     }
     

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Photos
+import Lottie
 
 extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
@@ -67,7 +69,17 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
         }
         if collectionView == photoCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell, for: indexPath) as? AlbumCell else { return UICollectionViewCell() }
-            let asset = self.fetchResults?.object(at: indexPath.item)
+            let asset = self.fetchResults[indexPath.row]
+            let imageOptions = PHImageRequestOptions()
+            imageOptions.isSynchronous = true
+            imageOptions.resizeMode = .fast
+            imageOptions.isNetworkAccessAllowed = true
+            imageOptions.deliveryMode = .highQualityFormat
+            
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 150, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
+                cell.thumbnail.image = image
+            }
+            
             cell.idx = indexPath.row
             cell.selectDelegate = self
             

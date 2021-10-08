@@ -36,9 +36,21 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         selectTap.delegate = self
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.thumbnail.bounds = CGRect(origin: .zero, size: CGSize(width: 150, height: 300))
+        self.thumbnail.center = self.center
+    }
+    
     @objc func didSelect(_ recognizere: UITapGestureRecognizer) {
         if recognizere.state == UIGestureRecognizer.State.ended {
             selectDelegate?.selected(index: idx)
+        }
+    }
+    
+    func configCell(data: UIImage?) {
+        if data != nil {
+            self.thumbnail.image = data!
         }
     }
 }

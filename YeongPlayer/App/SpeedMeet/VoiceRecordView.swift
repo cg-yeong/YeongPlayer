@@ -13,6 +13,8 @@ import Photos
 
 class VoiceRecordView: XibView {
     
+    
+    
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var recordIntputView: UIView!
@@ -69,6 +71,7 @@ class VoiceRecordView: XibView {
     // 사진 - 
     var fetchResults: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
+    var alitems = [UIImage?]()
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -89,6 +92,7 @@ class VoiceRecordView: XibView {
         setRecordView(nowRecordState)
         
         setFetchPhoto()
+
         
     }
     
@@ -139,6 +143,7 @@ class VoiceRecordView: XibView {
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        PHPhotoLibrary.shared().unregisterChangeObserver(self)
     }
     
 }
@@ -147,3 +152,11 @@ extension VoiceRecordView: UITextFieldDelegate {
     
 }
 
+extension VoiceRecordView: PHPhotoLibraryChangeObserver {
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        // fetchData
+        setFetchPhoto()
+    }
+    
+}
