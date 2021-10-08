@@ -76,7 +76,7 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
             imageOptions.isNetworkAccessAllowed = true
             imageOptions.deliveryMode = .highQualityFormat
             
-            imageManager.requestImage(for: asset, targetSize: CGSize(width: 150, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 100, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
                 cell.thumbnail.image = image
             }
             

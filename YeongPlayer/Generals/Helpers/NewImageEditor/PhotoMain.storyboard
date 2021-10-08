@@ -60,7 +60,6 @@
                                                         </button>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="70" height="69"/>
                                                 <connections>
                                                     <outlet property="imageView" destination="wML-E1-UIO" id="E9g-n4-hHV"/>
@@ -151,8 +150,9 @@
                         <outlet property="albums_imageView" destination="cZk-4W-6V7" id="Ere-lW-4fI"/>
                         <outlet property="back_btn" destination="Fpc-Wx-Zr4" id="MzH-5g-c8O"/>
                         <outlet property="collectionView" destination="0cX-cy-ifL" id="Bro-Ep-Ad7"/>
+                        <outlet property="next_btn" destination="Ue3-DE-FfP" id="KKx-a4-Y1x"/>
+                        <outlet property="photo_stackView" destination="MXe-g5-TqU" id="n0N-G1-buh"/>
                         <outlet property="photo_view" destination="ujc-Dt-NyM" id="aMb-yb-aTg"/>
-                        <outlet property="send_btn" destination="Ue3-DE-FfP" id="KKx-a4-Y1x"/>
                         <outlet property="title_view" destination="TOP-fs-QLi" id="PwX-ww-1eS"/>
                     </connections>
                 </viewController>

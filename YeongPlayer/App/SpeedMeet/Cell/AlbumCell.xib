@@ -21,10 +21,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-8c-7SE">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acD-oF-59x">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acD-oF-59x">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                             </imageView>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-JC-Iky">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-JC-Iky">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.59931784118248133" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

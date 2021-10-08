@@ -38,7 +38,7 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.thumbnail.bounds = CGRect(origin: .zero, size: CGSize(width: 150, height: 300))
+        self.thumbnail.bounds = CGRect(origin: .zero, size: CGSize(width: 100, height: 300))
         self.thumbnail.center = self.center
     }
     

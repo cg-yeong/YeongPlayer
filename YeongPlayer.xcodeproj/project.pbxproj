@@ -302,9 +302,7 @@
 			children = (
 				668BEA41270C194E00D1E78C /* PhotoMain.storyboard */,
 				668BEA45270C24D000D1E78C /* PhotoViewController.swift */,
-				668BEA4D270C502000D1E78C /* ImageCell.swift */,
-				668BEA49270C3C7000D1E78C /* PhotoViewModel.swift */,
-				668BEA47270C3BC000D1E78C /* PhotoData.swift */,
+				668E597B2710130B008FFE42 /* SelectedPhoto */,
 				668BEA56270E688800D1E78C /* PhotoAlbumView.swift */,
 				668BEA58270E691000D1E78C /* PhotoAlbumView.xib */,
 				668BEA4F270E681F00D1E78C /* Album */,
@@ -321,6 +319,16 @@
 				668BEA5A270E6AE900D1E78C /* PLAlbumCell.xib */,
 			);
 			path = Album;
+			sourceTree = "<group>";
+		};
+		668E597B2710130B008FFE42 /* SelectedPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				668BEA4D270C502000D1E78C /* ImageCell.swift */,
+				668BEA47270C3BC000D1E78C /* PhotoData.swift */,
+				668BEA49270C3C7000D1E78C /* PhotoViewModel.swift */,
+			);
+			path = SelectedPhoto;
 			sourceTree = "<group>";
 		};
 		66914DBD26FC3251002794BE /* Progress */ = {

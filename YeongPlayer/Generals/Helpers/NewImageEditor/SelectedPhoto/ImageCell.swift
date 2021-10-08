@@ -10,6 +10,7 @@ import UIKit
 
 
 class ImageCell: UICollectionViewCell {
+    
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet weak var movieIconImageView: UIImageView!
     
