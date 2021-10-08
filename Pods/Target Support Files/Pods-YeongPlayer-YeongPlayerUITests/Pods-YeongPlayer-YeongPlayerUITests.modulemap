@@ -1,6 +1,0 @@
-framework module Pods_YeongPlayer_YeongPlayerUITests {
-  umbrella header "Pods-YeongPlayer-YeongPlayerUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

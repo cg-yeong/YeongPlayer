@@ -1,6 +1,0 @@
-framework module Pods_YeongPlayer {
-  umbrella header "Pods-YeongPlayer-umbrella.h"
-
-  export *
-  module * { export * }
-}
