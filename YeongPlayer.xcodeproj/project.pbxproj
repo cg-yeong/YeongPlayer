@@ -292,12 +292,12 @@
 		668BEA12270C0ECB00D1E78C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				668BEA4C270C4FA700D1E78C /* PhotoEditor */,
+				668BEA4C270C4FA700D1E78C /* NewImageEditor */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		668BEA4C270C4FA700D1E78C /* PhotoEditor */ = {
+		668BEA4C270C4FA700D1E78C /* NewImageEditor */ = {
 			isa = PBXGroup;
 			children = (
 				668BEA41270C194E00D1E78C /* PhotoMain.storyboard */,
@@ -309,7 +309,7 @@
 				668BEA58270E691000D1E78C /* PhotoAlbumView.xib */,
 				668BEA4F270E681F00D1E78C /* Album */,
 			);
-			path = PhotoEditor;
+			path = NewImageEditor;
 			sourceTree = "<group>";
 		};
 		668BEA4F270E681F00D1E78C /* Album */ = {
