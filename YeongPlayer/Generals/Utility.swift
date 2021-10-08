@@ -38,7 +38,7 @@ class Utility: NSObject {
                 } else {
                     callback(false)
                 }
-            }
+            }      
         case .restricted:
             callback(false)
         case .denied:
