@@ -24,6 +24,8 @@ class PhotoViewController: UIViewController {
     
     private let bag = DisposeBag()
     
+    internal var albumsManager = PLAlbumManager()
+    
     var viewModel = PhotoViewModel()
     
     // 웹이랑 소통할 틀 만들어놓기만
@@ -51,9 +53,32 @@ class PhotoViewController: UIViewController {
                 if self.albums_btn.isSelected {
                     self.albums_imageView.image = UIImage(named: "bulletUp")
                     // 앨범 페이지 펼쳐주기 -> 앨범 선택시 다시 이미지 bulletDown으로 바꿔주기 & 앨범리스트 접기
+                    App.module.presenter.addSubview(.visibleView, type: PhotoAlbumView.self) { view in
+                        App.module.presenter.contextView = view
+                        
+                        view.hView = self.title_view
+                        // 앨범 매니저 관리 전달받기 그래서 선언을 !로 할 수 있었던 것
+                        view.albumsmanager = self.albumsManager
+                        
+                        // 앨범 선택했을 때 실행할 구문 지금 정하고 전달하기
+                        view.didSelectAlbum = { [weak self] album in
+                            self!.albums_imageView.image = UIImage(named: "bulletDown")
+                            // 앨범 세팅
+                            self?.setAlbum(album)
+                            // 앨범 리스트 버튼이니까 setTitle로 버튼 텍스트 바꾸기
+                            self?.albums_btn.setTitle(album.title, for: .normal)
+                            // 앨범 버튼 isSelected 조정
+                            self?.albums_btn.isSelected = false
+                            // 밑에 있는 attachmentInput의 원점으로 돌아가 앨범 새로 여는 효과 넣기
+                        }
+                    }
                 } else {
                     // 앨범 페이지가 펼쳐져있을 때만 이미지 변경
-                    self.albums_imageView.image = UIImage(named: "bulletDown")
+                    if let view = App.module.presenter.contextView as? PhotoAlbumView {
+                        App.module.presenter.contextView = nil
+                        view.removeFromSuperview()
+                        self.albums_imageView.image = UIImage(named: "bulletDown")
+                    }
                 }
                 
             }).disposed(by: bag)
@@ -85,7 +110,11 @@ class PhotoViewController: UIViewController {
         
     }
     
-    
+    func setAlbum(_ album: PLAlbum) {
+        // 앨범 선택했을 때 메인에 있는 것 변경
+        self.albums_btn.titleLabel?.text = album.title
+        // self.attachmentInput.changeImage(asset: album.collection!)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         if !self.isFirstResponder {

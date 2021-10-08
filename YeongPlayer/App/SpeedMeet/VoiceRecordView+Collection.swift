@@ -69,7 +69,7 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
         }
         if collectionView == photoCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell, for: indexPath) as? AlbumCell else { return UICollectionViewCell() }
-            let asset = self.fetchResults[indexPath.row]
+            let asset = self.fetchResults.object(at: indexPath.item)
             let imageOptions = PHImageRequestOptions()
             imageOptions.isSynchronous = true
             imageOptions.resizeMode = .fast
