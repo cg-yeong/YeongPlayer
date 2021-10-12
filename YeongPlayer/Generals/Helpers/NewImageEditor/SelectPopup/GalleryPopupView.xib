@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryPopupView" customModule="YeongPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="another_view" destination="UXj-3B-Oy9" id="nNs-62-2vH"/>
+                <outlet property="photo_btn" destination="wQA-II-Hev" id="Jkp-zF-CLN"/>
+                <outlet property="video_btn" destination="Hdw-h2-iJJ" id="enT-rD-7OW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXj-3B-Oy9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taE-HU-twR">
+                            <rect key="frame" x="52.5" y="283.5" width="270" height="100"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQA-II-Hev">
+                                    <rect key="frame" x="0.0" y="0.0" width="270" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="QtT-c0-Kxb"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="사진 촬영">
+                                        <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdw-h2-iJJ">
+                                    <rect key="frame" x="0.0" y="50" width="270" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="Jo9-YY-ltC"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vMz-lg-dHC"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="동영상 촬영">
+                                        <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="wQA-II-Hev" firstAttribute="top" secondItem="taE-HU-twR" secondAttribute="top" id="OCX-Bv-dA6"/>
+                                <constraint firstAttribute="bottom" secondItem="Hdw-h2-iJJ" secondAttribute="bottom" id="ZRo-pb-U6z"/>
+                                <constraint firstAttribute="trailing" secondItem="Hdw-h2-iJJ" secondAttribute="trailing" id="aeX-ce-3tn"/>
+                                <constraint firstAttribute="height" constant="100" id="pYq-Y8-oTH"/>
+                                <constraint firstItem="Hdw-h2-iJJ" firstAttribute="leading" secondItem="taE-HU-twR" secondAttribute="leading" id="pfp-ha-aSN"/>
+                                <constraint firstAttribute="width" constant="270" id="uXZ-Ky-QoK"/>
+                                <constraint firstAttribute="trailing" secondItem="wQA-II-Hev" secondAttribute="trailing" id="wbU-xL-nwH"/>
+                                <constraint firstItem="wQA-II-Hev" firstAttribute="leading" secondItem="taE-HU-twR" secondAttribute="leading" id="yTt-iw-7Ar"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.64000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="taE-HU-twR" firstAttribute="centerX" secondItem="UXj-3B-Oy9" secondAttribute="centerX" id="4Rs-fg-mSc"/>
+                        <constraint firstItem="taE-HU-twR" firstAttribute="centerY" secondItem="UXj-3B-Oy9" secondAttribute="centerY" id="H9H-We-ak8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UXj-3B-Oy9" secondAttribute="trailing" id="0Ve-9e-tFH"/>
+                <constraint firstItem="UXj-3B-Oy9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Dlh-ex-mc2"/>
+                <constraint firstItem="UXj-3B-Oy9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kSw-Ni-IZG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UXj-3B-Oy9" secondAttribute="bottom" id="z3P-Ha-zwb"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="140"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

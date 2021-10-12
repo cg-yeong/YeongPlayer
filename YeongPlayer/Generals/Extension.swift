@@ -172,3 +172,13 @@ extension PHAsset {
         }
     }
 }
+
+extension UIApplication {
+    public class func openURL(url: URL) {
+        if #available(iOS 10.0, *) {
+            shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            shared.openURL(url)
+        }
+    }
+}

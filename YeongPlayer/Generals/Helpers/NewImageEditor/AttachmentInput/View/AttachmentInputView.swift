@@ -1,18 +1,14 @@
 //
-//  AttachmentInputView.swift
+//  test1.swift
 //  YeongPlayer
 //
-//  Created by inforex on 2021/10/08.
+//  Created by inforex on 2021/10/12.
 //
 
 import Foundation
 import UIKit
-import RxDataSources
-import RxSwift
-import Photos
-import MobileCoreServices
 
-enum galleryType {
+enum Gallerytype {
     case photo
     case video
     case all
@@ -21,10 +17,5 @@ enum galleryType {
 
 class AttachmentInputView: UIView {
     
-    
-    
-    
-    
-    
-    
+    @IBOutlet weak var collectionView: UICollectionView!
 }
