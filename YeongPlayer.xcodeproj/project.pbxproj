@@ -113,6 +113,9 @@
 		66B3718327156AE80069C8FB /* BehaviorSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3718227156AE80069C8FB /* BehaviorSubject+.swift */; };
 		66B3718527156B120069C8FB /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3718427156B120069C8FB /* ObservableType+.swift */; };
 		66B37187271571B20069C8FB /* AttachmentInputConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B37186271571B20069C8FB /* AttachmentInputConfiguration.swift */; };
+		66B3718927157A610069C8FB /* AttachmentInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3718827157A610069C8FB /* AttachmentInputDelegate.swift */; };
+		66B3718B27157B390069C8FB /* AttachmentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3718A27157B390069C8FB /* AttachmentInput.swift */; };
+		66B3718D27157EBB0069C8FB /* AttachmentInputViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3718C27157EBB0069C8FB /* AttachmentInputViewLogic.swift */; };
 		66B3CA162710465D006EC2B1 /* AttachmentInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B3CA14271045F9006EC2B1 /* AttachmentInput.h */; };
 		66B3CA1E2710495E006EC2B1 /* AttachementInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */; };
 		66B3CA2027104982006EC2B1 /* AttachmentInputUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */; };
@@ -259,6 +262,9 @@
 		66B3718227156AE80069C8FB /* BehaviorSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorSubject+.swift"; sourceTree = "<group>"; };
 		66B3718427156B120069C8FB /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
 		66B37186271571B20069C8FB /* AttachmentInputConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputConfiguration.swift; sourceTree = "<group>"; };
+		66B3718827157A610069C8FB /* AttachmentInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputDelegate.swift; sourceTree = "<group>"; };
+		66B3718A27157B390069C8FB /* AttachmentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInput.swift; sourceTree = "<group>"; };
+		66B3718C27157EBB0069C8FB /* AttachmentInputViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputViewLogic.swift; sourceTree = "<group>"; };
 		66B3CA14271045F9006EC2B1 /* AttachmentInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentInput.h; sourceTree = "<group>"; };
 		66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachementInputError.swift; sourceTree = "<group>"; };
 		66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputUtil.swift; sourceTree = "<group>"; };
@@ -620,6 +626,8 @@
 			children = (
 				66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */,
 				66B37186271571B20069C8FB /* AttachmentInputConfiguration.swift */,
+				66B3718827157A610069C8FB /* AttachmentInputDelegate.swift */,
+				66B3718A27157B390069C8FB /* AttachmentInput.swift */,
 				66B3CA1C27104946006EC2B1 /* Logic */,
 				66B3CA1B2710493D006EC2B1 /* View */,
 				66B3CA14271045F9006EC2B1 /* AttachmentInput.h */,
@@ -648,6 +656,7 @@
 				66B3717A271542370069C8FB /* ImagePickerAuthorization.swift */,
 				66B3717C27154A4C0069C8FB /* AttachmentInputPhotoStatus.swift */,
 				66B3717E27154B850069C8FB /* AttachmentInputPhotoSelectIndex.swift */,
+				66B3718C27157EBB0069C8FB /* AttachmentInputViewLogic.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -949,6 +958,7 @@
 				66914DCB26FC7812002794BE /* VoiceRecordView+delegate.swift in Sources */,
 				669CC50D26EA019700DBD08E /* ViewController.swift in Sources */,
 				66B06D5126F42BEB00288FE5 /* Cookie.swift in Sources */,
+				66B3718D27157EBB0069C8FB /* AttachmentInputViewLogic.swift in Sources */,
 				668BEA51270E683700D1E78C /* PLAlbumManager.swift in Sources */,
 				6687E7542702E6BD002E331A /* MsgModel.swift in Sources */,
 				668BEA53270E685000D1E78C /* PLAlbum.swift in Sources */,
@@ -993,6 +1003,7 @@
 				66914DE026FDACD8002794BE /* SpeedMeet+Obs.swift in Sources */,
 				669CC50B26EA019700DBD08E /* SceneDelegate.swift in Sources */,
 				66B06D1F26F1B65E00288FE5 /* Logger.swift in Sources */,
+				66B3718927157A610069C8FB /* AttachmentInputDelegate.swift in Sources */,
 				66B06D4F26F42BE500288FE5 /* Cache.swift in Sources */,
 				66914DBA26FC12FC002794BE /* WKWebViewJavascriptBridge.swift in Sources */,
 				6687E75A27030AB1002E331A /* RecordMsgPlayer.swift in Sources */,
@@ -1016,6 +1027,7 @@
 				66929E4D26EAF05900BDD7CB /* VideoRecordVC.swift in Sources */,
 				66B06D2126F1C5A300288FE5 /* XibView.swift in Sources */,
 				6687E7502702E2DC002E331A /* RecordCell.swift in Sources */,
+				66B3718B27157B390069C8FB /* AttachmentInput.swift in Sources */,
 				66B3716D27150CC40069C8FB /* PhotoAlbumCell.swift in Sources */,
 				66914DC326FC4C29002794BE /* VoiceReocrdView+func.swift in Sources */,
 				66B06D4026F41E8800288FE5 /* VideoChatView+Cell.swift in Sources */,
