@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/// ViewModel 역할?
 class AttachmentInputPhotoStatus {
     
     enum Status {

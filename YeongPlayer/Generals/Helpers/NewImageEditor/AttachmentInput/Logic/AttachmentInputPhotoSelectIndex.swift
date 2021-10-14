@@ -17,7 +17,7 @@ class AttachmentInputPhotoSelectIndex {
     // output
     let output: Observable<Int>
     var index: Int {
-        return (try? self.indexSubject.value()) ?? 0
+        return self.indexSubject.value(0)
     }
     
     init() {

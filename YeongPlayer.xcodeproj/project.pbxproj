@@ -651,12 +651,12 @@
 		66B3CA1C27104946006EC2B1 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				66B37180271560400069C8FB /* AttachmentInputPhoto.swift */,
-				66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */,
 				66B3717A271542370069C8FB /* ImagePickerAuthorization.swift */,
+				66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */,
+				66B3718C27157EBB0069C8FB /* AttachmentInputViewLogic.swift */,
+				66B37180271560400069C8FB /* AttachmentInputPhoto.swift */,
 				66B3717C27154A4C0069C8FB /* AttachmentInputPhotoStatus.swift */,
 				66B3717E27154B850069C8FB /* AttachmentInputPhotoSelectIndex.swift */,
-				66B3718C27157EBB0069C8FB /* AttachmentInputViewLogic.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";

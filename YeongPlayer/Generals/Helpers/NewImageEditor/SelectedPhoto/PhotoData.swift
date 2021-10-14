@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Differentiator
 
 struct PhotoData: Equatable {
     // 파일 주소
@@ -21,4 +22,13 @@ struct PhotoData: Equatable {
     var fileId: String
     // 이미지인지 비디오인지 판단
     var isVideo: Bool
+}
+
+extension PhotoData: IdentifiableType {
+    typealias Identity = String
+    
+    var identity: String {
+        return self.fileId
+    }
+    
 }

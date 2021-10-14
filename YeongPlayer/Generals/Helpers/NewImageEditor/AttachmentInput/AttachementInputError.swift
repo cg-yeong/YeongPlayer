@@ -12,7 +12,7 @@ public enum AttachmentInputError: Error {
     case compressVideoFailed
     case compressImageFailed
     case thumbnailLoadFailed
-    case properitesLoadFailed
+    case propertiesLoadFailed
 }
 
 extension AttachmentInputError {

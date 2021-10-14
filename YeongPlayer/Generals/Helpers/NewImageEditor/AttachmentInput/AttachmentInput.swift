@@ -40,10 +40,10 @@ public class AttachmentInput {
     }
     
     public func removeFile(identifier: String, isVideo: Bool) {
-        self.attachmentInputView
+        self.attachmentInputView.removeFile(identifier: identifier, isVideo: isVideo)
     }
     
     public func changeImage(asset: PHAssetCollection) {
-        self.attachmentInputView
+        self.attachmentInputView.fetchAssets(asset: asset)
     }
 }

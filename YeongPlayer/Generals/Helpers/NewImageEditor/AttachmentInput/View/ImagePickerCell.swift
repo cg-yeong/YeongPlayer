@@ -78,7 +78,7 @@ class ImagePickerCell: UICollectionViewCell, CameraPermission {
         }
         picker.delegate = self
         picker.modalPresentationStyle = .fullScreen
-        var topViewController = { () -> UIViewController? in
+        let topViewController = { () -> UIViewController? in
             if var top = UIApplication.shared.keyWindow?.rootViewController {
                 while let presented = top.presentedViewController {
                     top = presented

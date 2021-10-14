@@ -49,6 +49,7 @@ class AttachmentInputPhoto {
             .filter { $0.map { $0 } != nil }    // filter { Type? != nil }
             .map { ($0.map { $0 })! }           // map { (Type?)! }
             .asObservable()
+        /// ObservableType+ : filter { $0.map { $0 } != nil }.map { ($0.map { $0 })! } ==> unwrap()
         self.properties = self.propertiesSubject.unwrap().asObservable()
         self.isVideo = (asset.mediaType == .video)
         self.videoTime = self.videoTimeSubjcet.unwrap().asObservable()
