@@ -11,7 +11,7 @@ import RxCocoa
 import AVFoundation
 import Photos
 
-class VideoRecordVC: UIViewController {
+final class VideoRecordVC: UIViewController {
     
     
     //@IBOutlet weak var cameraPreview: preview!

@@ -88,7 +88,7 @@ class AttachmentInputView: UIView {
                 cell.jsonData = self.configuration.jsonData
                 
                 return cell
-                
+            
             case .PhotoListItem(let photo, let status, let selectIndex):
                 let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoAlbumCell", for: indexPath) as! PhotoAlbumCell
                 if status.status == .selected {
@@ -296,7 +296,7 @@ extension AttachmentInputView: ImagePickerCellDelegate {
 
 extension AttachmentInputView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.frame.width / 3
+        let width = self.frame.width / 3.04
         return CGSize(width: width, height: width)
     }
 }

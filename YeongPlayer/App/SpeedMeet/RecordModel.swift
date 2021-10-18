@@ -31,7 +31,11 @@ class RecordModel {
     
     func setData() {
         
+        memNo = "1"
         minSec = "1"
         maxSec = "600"
+        funcName = "record"
+        uploadPath = ""
+        
     }
 }

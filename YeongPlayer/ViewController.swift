@@ -9,12 +9,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+import SwiftUI
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var album: UIButton!
     @IBOutlet weak var camera: UIButton!
     @IBOutlet weak var videoChat: UIButton!
     @IBOutlet weak var record: UIButton!
+    @IBOutlet weak var ui: UIButton!
     
     var bag = DisposeBag()
     
@@ -63,6 +66,13 @@ class ViewController: UIViewController {
                     App.module.presenter.contextView = view
                     view.viewData = ""
                 }
+            }.disposed(by: bag)
+        
+        ui.rx.tap
+            .bind {
+                let vc = UIHostingController(rootView: SwiftUIView())
+                
+                self.present(vc, animated: true, completion: nil)
             }.disposed(by: bag)
         
     }

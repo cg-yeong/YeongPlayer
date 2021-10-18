@@ -11,6 +11,8 @@ import UIKit
 
 class Utility: NSObject {
     
+    
+    
     static func removeFileAtURLIfExists(url: URL) {
         let filePath = url.path
         let fileManager = FileManager.default

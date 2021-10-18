@@ -46,8 +46,9 @@ class AttachmentInputPhoto {
         
         self.asset = asset
         self.thumbnail = self.thumbnailSubject
-            .filter { $0.map { $0 } != nil }    // filter { Type? != nil }
-            .map { ($0.map { $0 })! }           // map { (Type?)! }
+//            .filter { $0.map { $0 } != nil }    // filter { Type? != nil }
+//            .map { ($0.map { $0 })! }           // map { (Type?)! }
+            .unwrap()
             .asObservable()
         /// ObservableType+ : filter { $0.map { $0 } != nil }.map { ($0.map { $0 })! } ==> unwrap()
         self.properties = self.propertiesSubject.unwrap().asObservable()

@@ -20,6 +20,8 @@ class ImageCell: UICollectionViewCell {
     private var isVideo: Bool = false
     private weak var delegate: ImageCellDelegate?
     
+    
+    
     override func awakeFromNib() {
         self.imageView.layer.cornerRadius = 20
     }

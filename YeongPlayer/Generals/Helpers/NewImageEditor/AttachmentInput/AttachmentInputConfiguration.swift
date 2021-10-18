@@ -34,7 +34,7 @@ public class AttachmentInputConfiguration {
     
     var jsonData = JSON()
     
-    var galleryType: Gallerytype = .all
+    var galleryType: Gallerytype = .photo
     
     public init() {  }
 }

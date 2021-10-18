@@ -23,6 +23,21 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     var selectDelegate: selectedDelegate?
     var idx: Int = 0
+    var selectedIndex: AttachmentInputPhotoSelectIndex!
+    
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.selectView.isHidden = false
+                self.selectCountView.backgroundColor = UIColor(r: 255, g: 68, b: 114, a: 1)
+                
+            } else {
+                self.selectView.isHidden = true
+                self.selectCountView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.3)
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,21 +46,10 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         selectCountView.layer.borderWidth = 2
         
         
-        let selectTap = UITapGestureRecognizer(target: self, action: #selector(didSelect(_:)))
-        selectView.addGestureRecognizer(selectTap)
-        selectTap.delegate = self
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.thumbnail.bounds = CGRect(origin: .zero, size: CGSize(width: 100, height: 300))
-        self.thumbnail.center = self.center
-    }
-    
-    @objc func didSelect(_ recognizere: UITapGestureRecognizer) {
-        if recognizere.state == UIGestureRecognizer.State.ended {
-            selectDelegate?.selected(index: idx)
-        }
     }
     
     func configCell(data: UIImage?) {

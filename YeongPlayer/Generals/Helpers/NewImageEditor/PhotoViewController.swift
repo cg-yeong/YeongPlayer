@@ -201,7 +201,7 @@ class PhotoViewController: UIViewController {
             config.maxSelect = uploadAbleNum
         }
         
-        config.galleryType = .all
+        config.galleryType = .photo
         
         attachmentInput = AttachmentInput(configuration: config)
         attachmentInput.delegate = self

@@ -77,13 +77,22 @@ extension PresentedView {
     
     // 네비게션 뷰컨을 가져온다
     fileprivate func navigationViewController() -> UINavigationController?{
-        return UIApplication.shared.keyWindow?.rootViewController as? UINavigationController
-        return UIApplication.shared.windows.first?.rootViewController as? UINavigationController
+        return UIApplication.shared.windows.first!.rootViewController as? UINavigationController
     }
     
     // 네비게이션 뷰컨의 탑뷰컨트롤러를 가져온다. 독립성을 위해 위의 함수를 사용하지 않음 ...연관 없다 싶으면 위의 함수를 호출해서 코드 줄여도 될듯
     fileprivate func navigationTopViewController() -> UIViewController?{
-        return (UIApplication.shared.keyWindow?.rootViewController as? UINavigationController)?.topViewController
+        return navigationViewController()?.topViewController
+        //return (UIApplication.shared.keyWindow?.rootViewController as? UINavigationController)?.topViewController
+    }
+    
+    fileprivate func getMainViewController() -> ViewController? {
+        for vc in navigationViewController()!.viewControllers {
+            if vc is ViewController {
+                return (vc as! ViewController)
+            }
+        }
+        return nil
     }
     
 }

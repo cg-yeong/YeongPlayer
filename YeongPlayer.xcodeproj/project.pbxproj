@@ -119,6 +119,7 @@
 		66B3CA162710465D006EC2B1 /* AttachmentInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B3CA14271045F9006EC2B1 /* AttachmentInput.h */; };
 		66B3CA1E2710495E006EC2B1 /* AttachementInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */; };
 		66B3CA2027104982006EC2B1 /* AttachmentInputUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */; };
+		66ED4DC92719412F009E18A8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4DC82719412F009E18A8 /* SwiftUIView.swift */; };
 		927477C4A6FB4DC400C56631 /* Pods_YeongPlayer_YeongPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECE91A2B9B865C06CF495D9 /* Pods_YeongPlayer_YeongPlayerUITests.framework */; };
 		D01FB0F3BF08CCF423376E4B /* Pods_YeongPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BCAB09CCAA6122463F455C /* Pods_YeongPlayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -268,6 +269,7 @@
 		66B3CA14271045F9006EC2B1 /* AttachmentInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentInput.h; sourceTree = "<group>"; };
 		66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachementInputError.swift; sourceTree = "<group>"; };
 		66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputUtil.swift; sourceTree = "<group>"; };
+		66ED4DC82719412F009E18A8 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		773C8344809C253B543AF6B7 /* Pods-YeongPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer.release.xcconfig"; path = "Target Support Files/Pods-YeongPlayer/Pods-YeongPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		EAEDDF31B19FBDEB058E6792 /* Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-YeongPlayer-YeongPlayerUITests/Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -524,6 +526,7 @@
 		66B06D2326F1C76500288FE5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				66ED4DC72719411C009E18A8 /* SwiftUI */,
 				66B06D4126F425CC00288FE5 /* Application */,
 				66B06D5C26F44EE400288FE5 /* SpeedMeet */,
 				66B06D2A26F1E08200288FE5 /* VideoChat */,
@@ -659,6 +662,14 @@
 				66B3717E27154B850069C8FB /* AttachmentInputPhotoSelectIndex.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		66ED4DC72719411C009E18A8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				66ED4DC82719412F009E18A8 /* SwiftUIView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		6B5726069DA6433AA9216819 /* Pods */ = {
@@ -1005,6 +1016,7 @@
 				66B06D1F26F1B65E00288FE5 /* Logger.swift in Sources */,
 				66B3718927157A610069C8FB /* AttachmentInputDelegate.swift in Sources */,
 				66B06D4F26F42BE500288FE5 /* Cache.swift in Sources */,
+				66ED4DC92719412F009E18A8 /* SwiftUIView.swift in Sources */,
 				66914DBA26FC12FC002794BE /* WKWebViewJavascriptBridge.swift in Sources */,
 				6687E75A27030AB1002E331A /* RecordMsgPlayer.swift in Sources */,
 				66B06D0F26F0959A00288FE5 /* ABBorder.swift in Sources */,

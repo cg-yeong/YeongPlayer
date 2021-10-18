@@ -71,7 +71,6 @@ class VoiceRecordView: XibView {
     // 사진 - 
     var fetchResults: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
-    var alitems = [UIImage?]()
     
     override func layoutSubviews() {
         super.layoutSubviews()

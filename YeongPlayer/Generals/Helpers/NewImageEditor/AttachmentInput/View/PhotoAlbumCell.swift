@@ -30,6 +30,7 @@ class PhotoAlbumCell: UICollectionViewCell {
     }
     
     func setup(photo: AttachmentInputPhoto, status: AttachmentInputPhotoStatus, selectIndex: AttachmentInputPhotoSelectIndex) {
+        
         self.bag = DisposeBag()
         self.movieIconView.isHidden = !photo.isVideo
         self.movieTimeLabel.isHidden = !photo.isVideo

@@ -21,10 +21,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxb-8c-7SE">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acD-oF-59x">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acD-oF-59x">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                             </imageView>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-JC-Iky">
+                            <view hidden="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-JC-Iky">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.59931784118248133" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -86,6 +86,7 @@
                             <constraint firstItem="acD-oF-59x" firstAttribute="top" secondItem="vxb-8c-7SE" secondAttribute="top" id="lku-hK-JKX"/>
                             <constraint firstAttribute="trailing" secondItem="EvD-2P-owa" secondAttribute="trailing" constant="8" id="q32-mj-Z1R"/>
                             <constraint firstAttribute="bottom" secondItem="acD-oF-59x" secondAttribute="bottom" id="rlJ-Eb-C1j"/>
+                            <constraint firstAttribute="width" constant="150" id="sTi-HM-Thq"/>
                             <constraint firstAttribute="trailing" secondItem="81n-Q9-QOw" secondAttribute="trailing" constant="8" id="vaC-YC-atA"/>
                         </constraints>
                     </view>
@@ -95,6 +96,7 @@
                     <constraint firstItem="vxb-8c-7SE" firstAttribute="top" secondItem="CAN-bX-Yxt" secondAttribute="top" id="Lrw-rV-8if"/>
                     <constraint firstItem="vxb-8c-7SE" firstAttribute="leading" secondItem="CAN-bX-Yxt" secondAttribute="leading" id="T2p-rc-G46"/>
                     <constraint firstAttribute="bottom" secondItem="vxb-8c-7SE" secondAttribute="bottom" id="VRN-wX-pRR"/>
+                    <constraint firstItem="vxb-8c-7SE" firstAttribute="height" secondItem="CAN-bX-Yxt" secondAttribute="height" id="zdu-Gr-gKH"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>

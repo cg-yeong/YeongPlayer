@@ -68,32 +68,42 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
             }
         }
         if collectionView == photoCollectionView {
+            collectionView.allowsMultipleSelection = true
+            let items = photoCollectionView.indexPathsForSelectedItems
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell, for: indexPath) as? AlbumCell else { return UICollectionViewCell() }
             let asset = self.fetchResults.object(at: indexPath.item)
+            
             let imageOptions = PHImageRequestOptions()
             imageOptions.isSynchronous = true
             imageOptions.resizeMode = .fast
             imageOptions.isNetworkAccessAllowed = true
             imageOptions.deliveryMode = .highQualityFormat
             
-            imageManager.requestImage(for: asset, targetSize: CGSize(width: 100, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 150, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
                 cell.thumbnail.image = image
+                
             }
-            
-            cell.idx = indexPath.row
+            if let items = items, items.count > 0 {
+                cell.selectCount.isHidden = false
+                cell.selectCount.text = "\(items.count)"
+            }
+            //cell.idx = indexPath.row
             cell.selectDelegate = self
+            
+            
             
             return cell
         } else {
             return UICollectionViewCell()
         }
         
-        
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.contentSize.width
+        
         if collectionView == chatCollectionView {
+            let width = collectionView.contentSize.width
             switch chatData[indexPath.row].status {
             case ChatCell: return CGSize(width: width, height: 100)
             case RecordCell: return CGSize(width: width, height: 50)
@@ -103,7 +113,7 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
         if collectionView == photoCollectionView {
             return CGSize(width: 150, height: photoCollectionView.frame.height)
         } else {
-            return CGSize(width: 100, height: 100)
+            return CGSize(width: 150, height: 200)
         }
         
     }

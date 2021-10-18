@@ -225,7 +225,9 @@ extension VoiceRecordView {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         self.fetchResults = PHAsset.fetchAssets(with: fetchOptions)
-        self.photoCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.photoCollectionView.reloadData()
+        }
     }
     
 }
