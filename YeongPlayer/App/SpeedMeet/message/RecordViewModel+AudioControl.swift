@@ -12,15 +12,25 @@ extension RecordViewModel {
     
     func recordStart(_ audioRecorder: AVAudioRecorder?, _ completion: ((AVAudioRecorder, Bool) -> Void)!) {
         var audioRecorder = audioRecorder
-        let soundM4AFileURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("recording\(NSUUID().uuidString).m4a")
+//        let soundM4AFileURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("recording\(NSUUID().uuidString).m4a")
+        
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        var soundM4AFileURL: URL {
+            let fileName = UUID().uuidString + ".m4a"
+            return documentsURL.appendingPathComponent(fileName)
+        }
         log.d(soundM4AFileURL)
+        
         let recordSettings = [
             AVFormatIDKey : NSNumber(value: Int32(kAudioFormatMPEG4AAC)),
             AVNumberOfChannelsKey : NSNumber(value: 2),
             AVSampleRateKey : NSNumber(value: Int32(44100)),
             AVEncoderAudioQualityKey : NSNumber(value: Int32(AVAudioQuality.max.rawValue))
         ]
+        
         let audioSession = AVAudioSession.sharedInstance()
+        
         audioSession.requestRecordPermission { allowed in
             if allowed {
                 do {
@@ -28,6 +38,7 @@ extension RecordViewModel {
                     try audioRecorder = AVAudioRecorder(url: soundM4AFileURL, settings: recordSettings)
                     audioRecorder?.prepareToRecord()
                     audioRecorder?.isMeteringEnabled = true
+                    
                     if audioRecorder?.record(forDuration: Double(self.recordModel.value.maxSec)!) != nil {
                         completion(audioRecorder!, true)
                     } else {

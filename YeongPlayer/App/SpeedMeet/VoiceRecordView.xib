@@ -14,9 +14,9 @@
             <connections>
                 <outlet property="albumInputView" destination="hQE-Qf-p1A" id="OeF-kG-YDb"/>
                 <outlet property="backBtn" destination="hiU-4P-GiS" id="A4r-9d-ebn"/>
-                <outlet property="chatCollectionView" destination="2b6-yP-dNr" id="t3U-dM-gDN"/>
                 <outlet property="chatContainerView" destination="bP7-YW-7KD" id="d4C-VC-ka2"/>
                 <outlet property="chatSendBtn" destination="SJh-Ak-TPl" id="W5d-lf-IEU"/>
+                <outlet property="collectionView" destination="2b6-yP-dNr" id="t3U-dM-gDN"/>
                 <outlet property="fileAlbum" destination="AnT-Zn-dyH" id="6Lv-e7-KF2"/>
                 <outlet property="getMediaAlbum" destination="szX-Jk-nlc" id="mrS-Nq-tcJ"/>
                 <outlet property="keyboardConstraint" destination="dpI-5i-ZJy" id="oVK-Wg-HzB"/>

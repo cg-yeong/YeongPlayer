@@ -12,17 +12,16 @@ import Lottie
 extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func setCollectionView() {
-        chatCollectionView.dataSource = self
-        chatCollectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        chatCollectionView.register(UINib(nibName: RecordCell, bundle: nil), forCellWithReuseIdentifier: RecordCell)
-        chatCollectionView.register(UINib(nibName: ChatCell, bundle: nil), forCellWithReuseIdentifier: ChatCell)
+        collectionView.register(UINib(nibName: RecordCell, bundle: nil), forCellWithReuseIdentifier: RecordCell)
         
         let chatFlowlayout = UICollectionViewFlowLayout()
         chatFlowlayout.minimumLineSpacing = 5.0
-        chatFlowlayout.estimatedItemSize = CGSize(width: chatCollectionView.frame.width, height: 50)
-        chatCollectionView.collectionViewLayout = chatFlowlayout
-        chatCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        chatFlowlayout.estimatedItemSize = CGSize(width: collectionView.frame.width, height: 50)
+        collectionView.collectionViewLayout = chatFlowlayout
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
         /// ------ 사진 --------------------------
         
@@ -39,8 +38,8 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == chatCollectionView {
-            return chatData.count
+        if collectionView == collectionView {
+            return recordingMsgList.count
         }
         if collectionView == photoCollectionView {
             return fetchResults.count
@@ -49,23 +48,15 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == chatCollectionView {
-            switch chatData[indexPath.row].status {
-            case ChatCell:
-                if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChatCell, for: indexPath) as? ChatCell {
-                    cell.chatText.text = chatData[indexPath.row].chat
-                    cell.sendTime.text = "오후 6:00"
-                    cell.userName.text = "파댕스"
-                    return cell
-                }
+        if collectionView == collectionView {
+            
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordCell, for: indexPath) as? RecordCell {
                 
-            case RecordCell:
-                if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordCell, for: indexPath) as? RecordCell {
-                    return cell
-                }
-            default:
-                break
+                cell.cellDelegate = self
+                
+                return cell
             }
+            
         }
         if collectionView == photoCollectionView {
             collectionView.allowsMultipleSelection = true
@@ -87,11 +78,8 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
                 cell.selectCount.isHidden = false
                 cell.selectCount.text = "\(items.count)"
             }
-            //cell.idx = indexPath.row
+            
             cell.selectDelegate = self
-            
-            
-            
             return cell
         } else {
             return UICollectionViewCell()
@@ -102,13 +90,9 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == chatCollectionView {
+        if collectionView == collectionView {
             let width = collectionView.contentSize.width
-            switch chatData[indexPath.row].status {
-            case ChatCell: return CGSize(width: width, height: 100)
-            case RecordCell: return CGSize(width: width, height: 50)
-            default: return CGSize(width: width, height: 0)
-            }
+            return CGSize(width: width, height: 50)
         }
         if collectionView == photoCollectionView {
             return CGSize(width: 150, height: photoCollectionView.frame.height)
@@ -122,9 +106,24 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
     
 }
 
+extension VoiceRecordView: CellPlayDelegate {
+    func cellPlay(_ index: Int) {
+        do {
+            let action = try AVAudioPlayer(contentsOf: recordingMsgList[index].filePath)
+            action.numberOfLoops = 0
+            action.prepareToPlay()
+            action.volume = 1
+            action.play()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+}
+
 extension VoiceRecordView: selectedDelegate {
     func selected(index: Int) {
-        print("\(index) 셀 클릭")
+        
     }
     
 }

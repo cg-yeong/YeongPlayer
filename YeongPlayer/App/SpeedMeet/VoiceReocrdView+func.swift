@@ -167,8 +167,9 @@ extension VoiceRecordView {
         // indicator on, startAnimation()
         DispatchQueue.global().async {
             if self.audioPlayer == nil { return }
-            
-            let recordingFilePath_mp3 = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("\(String(Int(Date().timeIntervalSince1970))).mp3")
+            let fileName = "\(String(Int(Date().timeIntervalSince1970)))"
+            let recordingFilePath_mp3 = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true).appendingPathComponent("\(fileName).mp3")
+            // 여기서 이미 파일 : fileName.mp3 이 만들어짐
             
             // convert m4a -> mp3
             let converter = ExtAudioConverter()
@@ -178,12 +179,34 @@ extension VoiceRecordView {
             converter.outputNumberChannels = 2
             converter.outputFormatID = kAudioFormatMPEGLayer3
             converter.outputFileType = kAudioFormatMPEGLayer3
+            
             converter.convert()
+            // convert() 를 통해 fileName.mp3, recordingFilePath_mp3 에 파일이 덮어씌워짐?
             
             if let audioData = try? Data(contentsOf: recordingFilePath_mp3, options: .mappedRead) {
+                // recordingFilePath_mp3 - URL을 data화 해서 audioData에 담아서 Alamofire- multipartFormData로 전송
+                
+                // 오디오 파일용량 계산
+//                var voiceFileSize = 0
+//                if let attr = try? FileManager.default.attributesOfItem(atPath: recordingFilePath_mp3.path) {
+//                    if let fileSize = attr[FileAttributeKey.size] {
+//                        voiceFileSize = fileSize as! Int
+//                    }
+//                }
+                // manager -> struct -> append
+                self.recordingMsgList.append(RecordingMsg(filePath: recordingFilePath_mp3))
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+                
                 Utility.delayExecute(0) {
                     Toast.showOnXib("보내는 거 아직 구현 안했음")
                 }
+                
+                
+                
+                
             } else {
                 DispatchQueue.main.async {
                     Toast.showOnXib("녹음한 파일이 존재 안함 \n다시 녹음해줘", duration: 2.0)
@@ -217,7 +240,7 @@ extension VoiceRecordView {
         }
         
         txtInput.text = ""
-        chatCollectionView.reloadData()
+        collectionView.reloadData()
     }
     
     

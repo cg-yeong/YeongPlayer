@@ -19,4 +19,16 @@ class YeongAlert {
         customAlert.addAction(rightAction)
         App.module.presenter.visibleViewController?.present(customAlert, animated: true, completion: nil)
     }
+    
+    static func showAlert(title: String?, message: String?, actions: UIAlertAction...) {
+        let alertVC: UIAlertController = UIAlertController(title: title,
+                                                           message: message,
+                                                           preferredStyle: .alert)
+        
+        for action in actions {
+            alertVC.addAction(action)
+        }
+        
+        App.module.presenter.visibleViewController?.present(alertVC, animated: true, completion: nil)
+    }
 }

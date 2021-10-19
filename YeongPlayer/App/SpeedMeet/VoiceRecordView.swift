@@ -24,7 +24,7 @@ class VoiceRecordView: XibView {
     @IBOutlet weak var userContentArea: UIView!
     
     @IBOutlet weak var chatContainerView: UIView!
-    @IBOutlet weak var chatCollectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var getMediaAlbum: UIButton!
@@ -40,7 +40,9 @@ class VoiceRecordView: XibView {
     @IBOutlet weak var recordInputBtn: UIButton!
     @IBOutlet weak var reRecordBtn: UIButton!
     @IBOutlet weak var recordSendBtn: UIButton!
+    
     @IBOutlet weak var recordingBtn: UIButton!
+    
     @IBOutlet weak var noticeLabel: UILabel!
     @IBOutlet weak var txtInput: UITextField!
     @IBOutlet weak var fileAlbum: UIButton!
@@ -60,7 +62,7 @@ class VoiceRecordView: XibView {
     var pumpLottie = AnimationView()
     
     var chatData = [MsgModel]()
-    
+    var recordingMsgList = [RecordingMsg]()
     let bag = DisposeBag()
     
     // 녹음

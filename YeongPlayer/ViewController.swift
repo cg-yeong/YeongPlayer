@@ -68,12 +68,7 @@ class ViewController: UIViewController {
                 }
             }.disposed(by: bag)
         
-        ui.rx.tap
-            .bind {
-                let vc = UIHostingController(rootView: SwiftUIView())
-                
-                self.present(vc, animated: true, completion: nil)
-            }.disposed(by: bag)
+        
         
     }
     

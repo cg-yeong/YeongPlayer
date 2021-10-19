@@ -182,3 +182,12 @@ extension UIApplication {
         }
     }
 }
+
+extension AVPlayer {
+    var isPlaying: Bool {
+        guard self.currentItem != nil else { return false }
+        // 최근 아이템이 있을 때
+        return self.rate != 0
+        // 현재 재생속도가 0이 아니면 true 0이면 false 
+    }
+}

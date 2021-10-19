@@ -12,7 +12,7 @@ extension VoiceRecordView {
     
     func addObserver() {
         let tapv = UITapGestureRecognizer(target: self, action: #selector(taptapv))
-        chatCollectionView.addGestureRecognizer(tapv)
+        collectionView.addGestureRecognizer(tapv)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
