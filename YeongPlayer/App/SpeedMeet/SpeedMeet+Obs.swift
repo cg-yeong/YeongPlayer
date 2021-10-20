@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-extension VoiceRecordView {
+extension SpeedMeetView {
     
     func addObserver() {
         let tapv = UITapGestureRecognizer(target: self, action: #selector(taptapv))

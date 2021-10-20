@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension VoiceRecordView {
+extension SpeedMeetView {
     
     var ChatCell: String { return "ChatCell" }
     var RecordCell: String { return "RecordCell" }

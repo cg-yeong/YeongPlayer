@@ -67,6 +67,9 @@ class VideoChatView: XibView {
         return loadingAct
     }()
     
+    
+    
+    
     let bag = DisposeBag()
     
     

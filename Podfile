@@ -13,6 +13,7 @@ target 'YeongPlayer' do
   pod 'lottie-ios'
   pod 'Toast-Swift' ,'~> 5.0.0'
   pod 'RxDataSources'
+  pod 'OpenTok'
   # Pods for YeongPlayer
 
   target 'YeongPlayerTests' do

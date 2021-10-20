@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-extension VoiceRecordView: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+extension SpeedMeetView: AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
     /* --- AVAudioRecorderDelegate --- */
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {

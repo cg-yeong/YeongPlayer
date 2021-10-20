@@ -10,7 +10,7 @@ import AVFoundation
 import Lottie
 import Photos
 
-extension VoiceRecordView {
+extension SpeedMeetView {
     
     
     

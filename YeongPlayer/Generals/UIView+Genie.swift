@@ -17,8 +17,7 @@ enum RectEdge: Int
     
     var edgeDescription: String
     {
-        switch self
-        {
+        switch self {
         case .bottom:
             return "bottom"
         case .left:
@@ -32,8 +31,7 @@ enum RectEdge: Int
     
     var isVertical: Bool
     {
-        switch self
-        {
+        switch self {
         case .top, .bottom:
             return true
         case .left, .right:
@@ -62,8 +60,7 @@ extension Segment
 {
     init(edge: RectEdge, endRect: CGRect)
     {
-        switch edge
-        {
+        switch edge {
         case .top:
             self.init(a: CGPoint(x: endRect.minX, y: endRect.minY), b: CGPoint(x: endRect.maxX, y: endRect.minY))
         case .bottom:

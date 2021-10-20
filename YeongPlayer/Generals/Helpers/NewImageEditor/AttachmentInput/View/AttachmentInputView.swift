@@ -322,8 +322,7 @@ extension AttachmentInputView.SectionType: SectionModelType {
 extension AttachmentInputView: PHPhotoLibraryChangeObserver {
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         DispatchQueue.main.async {
-            log.d(self.configuration.currentVideoCount)
-            if let _ = (UIApplication.shared.windows[0].rootViewController as! UINavigationController).visibleViewController! as? PhotoViewController {
+            if let _ = App.module.presenter.visibleViewController as? PhotoViewController {
                 
                 if let photosFetchResult = self.logic?.pHFetchResult, let changeDetails = changeInstance.changeDetails(for: photosFetchResult) {
                     
@@ -333,7 +332,6 @@ extension AttachmentInputView: PHPhotoLibraryChangeObserver {
             } else {
                 
             }
-            
         }
         // main thread end
     }

@@ -9,20 +9,20 @@ import UIKit
 import Photos
 import Lottie
 
-extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension SpeedMeetView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func setCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        collectionView.register(UINib(nibName: RecordCell, bundle: nil), forCellWithReuseIdentifier: RecordCell)
-        
-        let chatFlowlayout = UICollectionViewFlowLayout()
-        chatFlowlayout.minimumLineSpacing = 5.0
-        chatFlowlayout.estimatedItemSize = CGSize(width: collectionView.frame.width, height: 50)
-        collectionView.collectionViewLayout = chatFlowlayout
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-        
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
+//
+//        collectionView.register(UINib(nibName: RecordCell, bundle: nil), forCellWithReuseIdentifier: RecordCell)
+//
+//        let chatFlowlayout = UICollectionViewFlowLayout()
+//        chatFlowlayout.minimumLineSpacing = 5.0
+//        chatFlowlayout.estimatedItemSize = CGSize(width: collectionView.frame.width, height: 50)
+//        collectionView.collectionViewLayout = chatFlowlayout
+//        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+//        
         /// ------ 사진 --------------------------
         
         photoCollectionView.delegate = self
@@ -106,7 +106,7 @@ extension VoiceRecordView: UICollectionViewDataSource, UICollectionViewDelegateF
     
 }
 
-extension VoiceRecordView: CellPlayDelegate {
+extension SpeedMeetView: CellPlayDelegate {
     func cellPlay(_ index: Int) {
         do {
             let action = try AVAudioPlayer(contentsOf: recordingMsgList[index].filePath)
@@ -121,7 +121,7 @@ extension VoiceRecordView: CellPlayDelegate {
     
 }
 
-extension VoiceRecordView: selectedDelegate {
+extension SpeedMeetView: selectedDelegate {
     func selected(index: Int) {
         
     }

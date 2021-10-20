@@ -11,10 +11,8 @@ import Lottie
 import AVFoundation
 import Photos
 
-class VoiceRecordView: XibView {
-    
-    
-    
+class SpeedMeetView: XibView {
+
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var recordIntputView: UIView!
@@ -149,11 +147,11 @@ class VoiceRecordView: XibView {
     
 }
 
-extension VoiceRecordView: UITextFieldDelegate {
+extension SpeedMeetView: UITextFieldDelegate {
     
 }
 
-extension VoiceRecordView: PHPhotoLibraryChangeObserver {
+extension SpeedMeetView: PHPhotoLibraryChangeObserver {
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         // fetchData

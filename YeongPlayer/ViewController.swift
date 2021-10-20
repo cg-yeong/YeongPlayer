@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         record.rx.tap
             .bind {
-                App.module.presenter.addSubview(.visibleView, type: VoiceRecordView.self) { view in
+                App.module.presenter.addSubview(.visibleView, type: SpeedMeetView.self) { view in
                     App.module.presenter.contextView = view
                     view.viewData = ""
                 }

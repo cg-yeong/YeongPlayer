@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-extension VoiceRecordView {
+extension SpeedMeetView {
     
     func bind() {
         
