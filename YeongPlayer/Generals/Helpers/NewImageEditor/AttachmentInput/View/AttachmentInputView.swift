@@ -77,7 +77,7 @@ class AttachmentInputView: UIView {
         self.collectionView.register(UINib(nibName: "PhotoAlbumCell", bundle: bundle), forCellWithReuseIdentifier: "PhotoAlbumCell")
         
         // dataSource
-        self.dataSource = RxCollectionViewSectionedReloadDataSource<SectionType>(configureCell: { (_, _, indexPath, item) -> UICollectionViewCell in
+        self.dataSource = RxCollectionViewSectionedReloadDataSource<SectionType>(configureCell: { (er, asd, indexPath, item) -> UICollectionViewCell in
             switch item {
             case .ImagePickerItem:
                 let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ImagePickerCell", for: indexPath) as! ImagePickerCell
@@ -99,7 +99,7 @@ class AttachmentInputView: UIView {
                     }
                     
                     if self.logic!.isCamera == true {
-                        self.logic?.statusDictionary[photo!.identifier]?.input.onNext(.selected)
+                        self.logic!.statusDictionary[photo!.identifier]?.input.onNext(.selected)
                     }
                 } else {
                     

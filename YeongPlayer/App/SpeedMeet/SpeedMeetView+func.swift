@@ -184,15 +184,7 @@ extension SpeedMeetView {
             // convert() 를 통해 fileName.mp3, recordingFilePath_mp3 에 파일이 덮어씌워짐?
             
             if let audioData = try? Data(contentsOf: recordingFilePath_mp3, options: .mappedRead) {
-                // recordingFilePath_mp3 - URL을 data화 해서 audioData에 담아서 Alamofire- multipartFormData로 전송
-                
-                // 오디오 파일용량 계산
-//                var voiceFileSize = 0
-//                if let attr = try? FileManager.default.attributesOfItem(atPath: recordingFilePath_mp3.path) {
-//                    if let fileSize = attr[FileAttributeKey.size] {
-//                        voiceFileSize = fileSize as! Int
-//                    }
-//                }
+
                 // manager -> struct -> append
                 self.recordingMsgList.append(RecordingMsg(filePath: recordingFilePath_mp3))
                 DispatchQueue.main.async {
@@ -247,7 +239,11 @@ extension SpeedMeetView {
     func setFetchPhoto() {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        fetchOptions.predicate = NSPredicate(format: "mediaType == %d || mediaType == %d && (duration > %f && duration < %f)",
+                                              PHAssetMediaType.image.rawValue,
+                                              PHAssetMediaType.video.rawValue, 0, 10 + 0.99)        //비디오풀기 1분 이하만 가능
         self.fetchResults = PHAsset.fetchAssets(with: fetchOptions)
+        
         DispatchQueue.main.async {
             self.photoCollectionView.reloadData()
         }

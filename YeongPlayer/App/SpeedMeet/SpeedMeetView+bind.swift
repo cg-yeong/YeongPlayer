@@ -70,7 +70,7 @@ extension SpeedMeetView {
                 self.fileAlbum.isSelected.toggle()
             }.disposed(by: bag)
         
-        getMediaAlbum.rx.tap
+        getMediaAlbum.rx.tap // attachmentinputview 여는 버튼
             .bind {
                 // 권한 먼저 묻기
                 Utility.askPhotoAuthorization { (photoGranted) in

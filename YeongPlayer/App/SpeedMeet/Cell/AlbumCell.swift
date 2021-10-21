@@ -23,6 +23,7 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     var selectDelegate: selectedDelegate?
     var idx: Int = 0
+    var representedAssetIdentifier: String?
     var selectedIndex: AttachmentInputPhotoSelectIndex!
     
     override var isSelected: Bool {
@@ -31,9 +32,13 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
                 self.selectView.isHidden = false
                 self.selectCountView.backgroundColor = UIColor(r: 255, g: 68, b: 114, a: 1)
                 
+                self.selectCount.isHidden = false
+                self.selectCount.text = "\(idx)"
+                
             } else {
                 self.selectView.isHidden = true
                 self.selectCountView.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.3)
+                self.selectCount.isHidden = true
             }
         }
     }
@@ -45,16 +50,19 @@ class AlbumCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         selectCountView.layer.borderColor = UIColor.white.cgColor
         selectCountView.layer.borderWidth = 2
         
-        
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
     }
     
-    func configCell(data: UIImage?) {
-        if data != nil {
-            self.thumbnail.image = data!
+    func configCell(with image: UIImage?) {
+        if image != nil {
+            self.thumbnail.image = image!
         }
     }
 }

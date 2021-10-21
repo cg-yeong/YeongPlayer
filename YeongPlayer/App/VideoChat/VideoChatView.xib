@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -705,6 +706,11 @@
                         <constraint firstAttribute="bottom" secondItem="oBW-Y9-2IP" secondAttribute="bottom" id="xP6-iv-vwn"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYc-fO-5Gc">
+                    <rect key="frame" x="156" y="291" width="24" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="fHn-pR-VWH" firstAttribute="top" secondItem="0ZL-tS-twK" secondAttribute="bottom" id="6Mu-I4-pVs"/>
@@ -729,7 +735,7 @@
                 <constraint firstAttribute="trailing" secondItem="fHn-pR-VWH" secondAttribute="trailing" constant="15" id="yBL-bz-fF9"/>
                 <constraint firstAttribute="bottom" secondItem="fHn-pR-VWH" secondAttribute="bottom" constant="15" id="z2j-kQ-RCy"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="98"/>
+            <point key="canvasLocation" x="138.40000000000001" y="97.601199400299862"/>
         </view>
     </objects>
     <resources>

@@ -119,6 +119,7 @@
 		66B3CA162710465D006EC2B1 /* AttachmentInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B3CA14271045F9006EC2B1 /* AttachmentInput.h */; };
 		66B3CA1E2710495E006EC2B1 /* AttachementInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */; };
 		66B3CA2027104982006EC2B1 /* AttachmentInputUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */; };
+		66ED4E0E271F9EFD009E18A8 /* LocalImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E0D271F9EFD009E18A8 /* LocalImageManager.swift */; };
 		927477C4A6FB4DC400C56631 /* Pods_YeongPlayer_YeongPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECE91A2B9B865C06CF495D9 /* Pods_YeongPlayer_YeongPlayerUITests.framework */; };
 		D01FB0F3BF08CCF423376E4B /* Pods_YeongPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BCAB09CCAA6122463F455C /* Pods_YeongPlayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -268,6 +269,7 @@
 		66B3CA14271045F9006EC2B1 /* AttachmentInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentInput.h; sourceTree = "<group>"; };
 		66B3CA1D2710495E006EC2B1 /* AttachementInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachementInputError.swift; sourceTree = "<group>"; };
 		66B3CA1F27104982006EC2B1 /* AttachmentInputUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputUtil.swift; sourceTree = "<group>"; };
+		66ED4E0D271F9EFD009E18A8 /* LocalImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageManager.swift; sourceTree = "<group>"; };
 		773C8344809C253B543AF6B7 /* Pods-YeongPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer.release.xcconfig"; path = "Target Support Files/Pods-YeongPlayer/Pods-YeongPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		EAEDDF31B19FBDEB058E6792 /* Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-YeongPlayer-YeongPlayerUITests/Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +333,7 @@
 		668BEA0D270BEC8B00D1E78C /* AlbumContainer */ = {
 			isa = PBXGroup;
 			children = (
+				66ED4E0D271F9EFD009E18A8 /* LocalImageManager.swift */,
 			);
 			path = AlbumContainer;
 			sourceTree = "<group>";
@@ -1002,6 +1005,7 @@
 				66B06D3826F31CA800288FE5 /* RankView.swift in Sources */,
 				66B06D1926F168D000288FE5 /* ABVideoHelper.swift in Sources */,
 				66929E4F26EAF07000BDD7CB /* VideoSelectVC.swift in Sources */,
+				66ED4E0E271F9EFD009E18A8 /* LocalImageManager.swift in Sources */,
 				66B37187271571B20069C8FB /* AttachmentInputConfiguration.swift in Sources */,
 				66B06D4726F4262500288FE5 /* AppModule.swift in Sources */,
 				66B06D4526F4260C00288FE5 /* AppCore.swift in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 import Photos
 import Lottie
+import RxSwift
 
 extension SpeedMeetView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
@@ -32,15 +33,27 @@ extension SpeedMeetView: UICollectionViewDataSource, UICollectionViewDelegateFlo
         let photoFlowLayout = UICollectionViewFlowLayout()
         photoFlowLayout.scrollDirection = .horizontal
         photoFlowLayout.minimumLineSpacing = 2.0
-        photoFlowLayout.estimatedItemSize = CGSize(width: 150, height: photoCollectionView.frame.height)
+        photoFlowLayout.itemSize = CGSize(width: 150, height: 300)
         photoCollectionView.collectionViewLayout = photoFlowLayout
+        
+        
+        // 선택 인덱스 관찰해보기 1021
+        photoCollectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexpath in
+                if let item = self?.fetchResults[indexpath.item] {
+                    
+                }
+            }).disposed(by: bag)
+        
         
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == collectionView {
-            return recordingMsgList.count
-        }
+//        if collectionView == collectionView {
+//            return recordingMsgList.count
+//        }
         if collectionView == photoCollectionView {
             return fetchResults.count
         }
@@ -48,38 +61,45 @@ extension SpeedMeetView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == collectionView {
-            
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordCell, for: indexPath) as? RecordCell {
-                
-                cell.cellDelegate = self
-                
-                return cell
-            }
-            
-        }
+//        if collectionView == collectionView {
+//
+//            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordCell, for: indexPath) as? RecordCell {
+//
+//                cell.cellDelegate = self
+//
+//                return cell
+//            }
+//
+//        }
         if collectionView == photoCollectionView {
+            
             collectionView.allowsMultipleSelection = true
+            
             let items = photoCollectionView.indexPathsForSelectedItems
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell, for: indexPath) as? AlbumCell else { return UICollectionViewCell() }
+            
             let asset = self.fetchResults.object(at: indexPath.item)
             
-            let imageOptions = PHImageRequestOptions()
-            imageOptions.isSynchronous = true
-            imageOptions.resizeMode = .fast
-            imageOptions.isNetworkAccessAllowed = true
-            imageOptions.deliveryMode = .highQualityFormat
-            
-            imageManager.requestImage(for: asset, targetSize: CGSize(width: 150, height: photoCollectionView.frame.height), contentMode: .aspectFill, options: imageOptions) { (image, _) in
-                cell.thumbnail.image = image
+            LocalImageManager.shared.requestImage(with: asset, thumbnailSize: CGSize(width: 150, height: 300)) { (image) in
+                cell.configCell(with: image)
                 
             }
+            if asset.mediaType != .image {
+                cell.isVideoView.isHidden = false
+                cell.videoTime.text = "\(asset.duration.minuteSecond)"
+            }
             if let items = items, items.count > 0 {
-                cell.selectCount.isHidden = false
-                cell.selectCount.text = "\(items.count)"
+                cell.idx = items.count
+                guard items.count < 11 else {
+                    Toast.show("최대 10개까지 선택 가능합니다.", on: .visibleView)
+                    return cell
+                }
+                
+                
+                print(items.count)
             }
             
-            cell.selectDelegate = self
+//            cell.selectDelegate = self
             return cell
         } else {
             return UICollectionViewCell()
@@ -90,12 +110,12 @@ extension SpeedMeetView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == collectionView {
-            let width = collectionView.contentSize.width
-            return CGSize(width: width, height: 50)
-        }
+//        if collectionView == collectionView {
+//            let width = collectionView.contentSize.width
+//            return CGSize(width: width, height: 50)
+//        }
         if collectionView == photoCollectionView {
-            return CGSize(width: 150, height: photoCollectionView.frame.height)
+            return CGSize(width: 150, height: 300)
         } else {
             return CGSize(width: 150, height: 200)
         }
@@ -121,9 +141,9 @@ extension SpeedMeetView: CellPlayDelegate {
     
 }
 
-extension SpeedMeetView: selectedDelegate {
-    func selected(index: Int) {
-        
-    }
-    
-}
+//extension SpeedMeetView: selectedDelegate {
+//    func selected(index: Int) {
+//        
+//    }
+//    
+//}
