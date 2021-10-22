@@ -17,7 +17,7 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var albums_btn: UIButton!
     @IBOutlet weak var albums_imageView: UIImageView!
     @IBOutlet weak var title_view: UIView!
-    
+    @IBOutlet weak var photoStackView: UIStackView!
     
 
     override func viewDidLoad() {
