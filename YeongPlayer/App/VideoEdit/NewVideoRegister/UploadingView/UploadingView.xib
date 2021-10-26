@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadingView" customModule="chat_radar" customModuleProvider="target">
+            <connections>
+                <outlet property="uploading_view" destination="urr-uH-jDQ" id="Vvg-Qe-QcQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6wQ-im-gQE">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-J0-fTZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urr-uH-jDQ">
+                            <rect key="frame" x="112.5" y="293.5" width="150" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="WEb-gd-yWt"/>
+                                <constraint firstAttribute="height" constant="80" id="ix7-BD-juB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="urr-uH-jDQ" firstAttribute="centerY" secondItem="9Oh-J0-fTZ" secondAttribute="centerY" id="8M4-Lx-Djp"/>
+                        <constraint firstItem="urr-uH-jDQ" firstAttribute="centerX" secondItem="9Oh-J0-fTZ" secondAttribute="centerX" id="HwT-fB-19g"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Y6h-hd-aTP"/>
+            <constraints>
+                <constraint firstItem="9Oh-J0-fTZ" firstAttribute="leading" secondItem="Y6h-hd-aTP" secondAttribute="leading" id="6cH-2u-FAg"/>
+                <constraint firstItem="9Oh-J0-fTZ" firstAttribute="bottom" secondItem="Y6h-hd-aTP" secondAttribute="bottom" id="jZe-QU-dDk"/>
+                <constraint firstItem="9Oh-J0-fTZ" firstAttribute="top" secondItem="Y6h-hd-aTP" secondAttribute="top" id="s9A-Fh-7Ca"/>
+                <constraint firstItem="9Oh-J0-fTZ" firstAttribute="trailing" secondItem="Y6h-hd-aTP" secondAttribute="trailing" id="y0y-Rn-YdT"/>
+            </constraints>
+            <point key="canvasLocation" x="-58.399999999999999" y="114.69265367316342"/>
+        </view>
+    </objects>
+</document>
