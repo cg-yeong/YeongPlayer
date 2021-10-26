@@ -27,6 +27,27 @@ class Utility: NSObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: closure)
     }
     
+    static func askMicAuthorization(callback: @escaping (Bool) -> Void) {
+        let micStatus = AVAudioSession.sharedInstance().recordPermission
+        print(micStatus)
+        switch micStatus {
+        case .granted:
+            callback(true)
+        case .undetermined:
+            AVAudioSession.sharedInstance().requestRecordPermission({ (granted) in
+                if granted {
+                    callback(true)
+                } else {
+                    callback(false)
+                }
+            })
+        case .denied:
+            callback(false)
+        @unknown default:
+            callback(false)
+        }
+    }
+    
     // 사진 라이브러리 사용에 대한 허가 체크 하고 없으면 요청
     static func askPhotoAuthorization(callback: @escaping (Bool) -> Void) {
         let status = PHPhotoLibrary.authorizationStatus()

@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoiceRecordView" customModule="YeongPlayer" customModuleProvider="target">
             <connections>
+                <outlet property="albumBtn" destination="8Z0-gy-Mfj" id="C84-3R-U4V"/>
                 <outlet property="backBtn" destination="hiU-4P-GiS" id="A4r-9d-ebn"/>
+                <outlet property="cameraBtn" destination="yCs-95-BLb" id="3BH-U1-R8o"/>
                 <outlet property="chatCollectionView" destination="2b6-yP-dNr" id="t3U-dM-gDN"/>
                 <outlet property="chatContainerView" destination="bP7-YW-7KD" id="d4C-VC-ka2"/>
                 <outlet property="chatSendBtn" destination="SJh-Ak-TPl" id="W5d-lf-IEU"/>
@@ -22,6 +24,7 @@
                 <outlet property="likeBtn" destination="QFO-Oa-duK" id="etX-db-zot"/>
                 <outlet property="mainView" destination="ezx-46-A0O" id="ZJV-Lu-oei"/>
                 <outlet property="moreBtn" destination="A0l-gM-GfF" id="Jbz-y5-h6g"/>
+                <outlet property="movieBtn" destination="Dd4-6P-MGU" id="hz2-Sx-zoC"/>
                 <outlet property="noticeLabel" destination="HMI-zo-2Bw" id="sSU-UG-vmY"/>
                 <outlet property="progressBarView" destination="bmK-9s-lGf" id="K7h-9G-wyK"/>
                 <outlet property="pumpLottieView" destination="s9y-nS-KME" id="Y7Y-dD-zVB"/>
@@ -34,6 +37,7 @@
                 <outlet property="reportQuitChat" destination="Gau-KG-4Oa" id="sfp-cv-cch"/>
                 <outlet property="txtInput" destination="qC9-Be-qKi" id="ltL-tx-Vke"/>
                 <outlet property="userContentArea" destination="67i-30-DXh" id="uGr-Pr-WpV"/>
+                <outlet property="voiceBtn" destination="zof-si-XPL" id="EgS-1R-fSA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -70,6 +74,70 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67i-30-DXh" userLabel="Contents Input View">
                     <rect key="frame" x="0.0" y="367" width="375" height="300"/>
                     <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-Oi-tEN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Z0-gy-Mfj">
+                                    <rect key="frame" x="15" y="24.5" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="AbL-Zb-BoD"/>
+                                        <constraint firstAttribute="width" constant="100" id="NsV-Bo-3Pm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="앨범" backgroundImage="photo.on.rectangle.angled" catalog="system">
+                                        <color key="titleColor" systemColor="systemTealColor"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd4-6P-MGU">
+                                    <rect key="frame" x="260" y="27" width="100" height="96"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="T5V-2j-YfK"/>
+                                        <constraint firstAttribute="width" constant="100" id="opb-FY-WjA"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="영상">
+                                        <color key="titleColor" systemColor="systemTealColor"/>
+                                        <imageReference key="backgroundImage" image="video" catalog="system" symbolScale="default"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCs-95-BLb">
+                                    <rect key="frame" x="137.5" y="25.5" width="100" height="98"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="0cz-NQ-yCB"/>
+                                        <constraint firstAttribute="height" constant="100" id="RRN-nO-asa"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="카메라" backgroundImage="camera" catalog="system">
+                                        <color key="titleColor" systemColor="systemTealColor"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zof-si-XPL">
+                                    <rect key="frame" x="15" y="174.5" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="42u-ua-sdL"/>
+                                        <constraint firstAttribute="width" constant="100" id="CDS-22-pnE"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="음성" backgroundImage="mic" catalog="system"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="zof-si-XPL" secondAttribute="bottom" constant="25" id="1V7-k2-fKq"/>
+                                <constraint firstItem="zof-si-XPL" firstAttribute="leading" secondItem="Tje-Oi-tEN" secondAttribute="leading" constant="15" id="KUZ-si-l6W"/>
+                                <constraint firstItem="Dd4-6P-MGU" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="NyO-r2-RO6"/>
+                                <constraint firstItem="8Z0-gy-Mfj" firstAttribute="leading" secondItem="Tje-Oi-tEN" secondAttribute="leading" constant="15" id="O94-36-7VC"/>
+                                <constraint firstItem="8Z0-gy-Mfj" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="Tvv-9L-TuN"/>
+                                <constraint firstAttribute="trailing" secondItem="Dd4-6P-MGU" secondAttribute="trailing" constant="15" id="cBN-sL-FiJ"/>
+                                <constraint firstItem="yCs-95-BLb" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="i0r-2c-7Ji"/>
+                                <constraint firstItem="yCs-95-BLb" firstAttribute="centerX" secondItem="Tje-Oi-tEN" secondAttribute="centerX" id="r9t-pW-DZB"/>
+                            </constraints>
+                        </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-c1-MRd" userLabel="Record Btns View">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <subviews>
@@ -157,72 +225,6 @@
                                 <constraint firstItem="ITE-Fs-Z2R" firstAttribute="centerY" secondItem="VMe-KC-Cbh" secondAttribute="centerY" id="yn2-6Q-3AN"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-Oi-tEN">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Z0-gy-Mfj">
-                                    <rect key="frame" x="15" y="24.5" width="100" height="100"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="AbL-Zb-BoD"/>
-                                        <constraint firstAttribute="width" constant="100" id="NsV-Bo-3Pm"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="앨범" backgroundImage="photo.on.rectangle.angled" catalog="system">
-                                        <color key="titleColor" systemColor="systemTealColor"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd4-6P-MGU">
-                                    <rect key="frame" x="260" y="27" width="100" height="96"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="T5V-2j-YfK"/>
-                                        <constraint firstAttribute="width" constant="100" id="opb-FY-WjA"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="영상">
-                                        <color key="titleColor" systemColor="systemTealColor"/>
-                                        <imageReference key="backgroundImage" image="video" catalog="system" symbolScale="default"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCs-95-BLb">
-                                    <rect key="frame" x="137.5" y="25.5" width="100" height="98"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="0cz-NQ-yCB"/>
-                                        <constraint firstAttribute="height" constant="100" id="RRN-nO-asa"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="카메라" backgroundImage="camera" catalog="system">
-                                        <color key="titleColor" systemColor="systemTealColor"/>
-                                    </state>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zof-si-XPL">
-                                    <rect key="frame" x="15" y="174.5" width="100" height="100"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="42u-ua-sdL"/>
-                                        <constraint firstAttribute="width" constant="100" id="CDS-22-pnE"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="음성" backgroundImage="mic" catalog="system">
-                                        <color key="titleColor" systemColor="systemTealColor"/>
-                                    </state>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="zof-si-XPL" secondAttribute="bottom" constant="25" id="1V7-k2-fKq"/>
-                                <constraint firstItem="zof-si-XPL" firstAttribute="leading" secondItem="Tje-Oi-tEN" secondAttribute="leading" constant="15" id="KUZ-si-l6W"/>
-                                <constraint firstItem="Dd4-6P-MGU" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="NyO-r2-RO6"/>
-                                <constraint firstItem="8Z0-gy-Mfj" firstAttribute="leading" secondItem="Tje-Oi-tEN" secondAttribute="leading" constant="15" id="O94-36-7VC"/>
-                                <constraint firstItem="8Z0-gy-Mfj" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="Tvv-9L-TuN"/>
-                                <constraint firstAttribute="trailing" secondItem="Dd4-6P-MGU" secondAttribute="trailing" constant="15" id="cBN-sL-FiJ"/>
-                                <constraint firstItem="yCs-95-BLb" firstAttribute="top" secondItem="Tje-Oi-tEN" secondAttribute="top" constant="25" id="i0r-2c-7Ji"/>
-                                <constraint firstItem="yCs-95-BLb" firstAttribute="centerX" secondItem="Tje-Oi-tEN" secondAttribute="centerX" id="r9t-pW-DZB"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -277,6 +279,9 @@
                                         <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                     </state>
                                     <state key="disabled">
+                                        <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                    </state>
+                                    <state key="selected">
                                         <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
                                     </state>
                                 </button>

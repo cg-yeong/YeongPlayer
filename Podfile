@@ -10,7 +10,12 @@ target 'YeongPlayer' do
 	pod 'SwiftyJSON', '5.0.0'
   pod 'Alamofire'
   pod 'KDCircularProgress'
+  
+  # Image, Gif
+  pod 'SwiftGifOrigin', '1.7.0'
   pod 'lottie-ios'
+  
+  
   pod 'Toast-Swift' ,'~> 5.0.0'
   pod 'RxDataSources'
   # Pods for YeongPlayer

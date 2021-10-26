@@ -182,11 +182,11 @@ extension VoiceRecordView {
             
             if let audioData = try? Data(contentsOf: recordingFilePath_mp3, options: .mappedRead) {
                 Utility.delayExecute(0) {
-                    Toast.showOnXib("보내는 거 아직 구현 안했음")
+                    Toast.show("보내는 거 아직 구현 안했음")
                 }
             } else {
                 DispatchQueue.main.async {
-                    Toast.showOnXib("녹음한 파일이 존재 안함 \n다시 녹음해줘", duration: 2.0)
+                    Toast.show("녹음한 파일이 존재 안함 \n다시 녹음해줘", duration: 2.0)
                 }
                 
                 self.close()

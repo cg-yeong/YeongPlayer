@@ -70,29 +70,45 @@ extension VoiceRecordView {
                 self.funcInputBtn.isSelected.toggle()
             }.disposed(by: bag)
         
+        movieBtn.rx.tap
+            .bind {
+                Utility.askMicAuthorization(callback: { (micGranted) in
+                    if micGranted {
+                        DispatchQueue.main.async {
+                            guard let recorderVC = UIStoryboard(name: "NewVideoRegister", bundle: nil).instantiateViewController(withIdentifier: "NewvideoRecorder") as? NewVideoRecordViewController else {
+                                return
+                            }
+                            
+                            //recorderVC.viewData = data
+                            App.module.presenter.visibleViewController?.present(recorderVC, animated: true)
+                        }
+                    } else {
+                        Permission.sharedInstance.manualyAuthorization(.Microphone)
+                    }
+                })
+            }.disposed(by: bag)
         
-        
-//        recordInputBtn.rx.tap
-//            .bind {
-//                self.endEditing(true)
-//                self.albumInputView.isHidden = true
-//                if self.keyboardConstraint.constant != 0 {
-//                    if !self.recordIntputView.isHidden {
-//                        self.stopAudio()
-//                        UIView.animate(withDuration: 0.25) {
-//                            self.keyboardConstraint.constant = 0
-//                            self.layoutIfNeeded()
-//                        }
-//                    }
-//                } else {
-//                    UIView.animate(withDuration: 0.25) {
-//                        self.keyboardConstraint.constant = (self.txtInput.inputView?.frame.maxY) ?? 250
-//                        self.layoutIfNeeded()
-//                    }
-//                }
-//                self.recordIntputView.isHidden.toggle()
-//                self.recordInputBtn.isSelected.toggle()
-//            }.disposed(by: bag)
+        voiceBtn.rx.tap
+            .bind {
+                self.endEditing(true)
+                self.inputBaseView.isHidden = true
+                if self.keyboardConstraint.constant != 0 {
+                    if !self.recordIntputView.isHidden {
+                        self.stopAudio()
+                        UIView.animate(withDuration: 0.25) {
+                            self.keyboardConstraint.constant = 0
+                            self.layoutIfNeeded()
+                        }
+                    }
+                } else {
+                    UIView.animate(withDuration: 0.25) {
+                        self.keyboardConstraint.constant = (self.txtInput.inputView?.frame.maxY) ?? 250
+                        self.layoutIfNeeded()
+                    }
+                }
+                self.recordIntputView.isHidden.toggle()
+                self.voiceBtn.isSelected.toggle()
+            }.disposed(by: bag)
         
         
         recordingBtn.rx.tap

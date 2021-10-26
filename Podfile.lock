@@ -14,6 +14,7 @@ PODS:
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
+  - SwiftGifOrigin (1.7.0)
   - SwiftyJSON (5.0.0)
   - Toast-Swift (5.0.1)
 
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - RxCocoa (~> 5)
   - RxDataSources
   - RxSwift (~> 5)
+  - SwiftGifOrigin (= 1.7.0)
   - SwiftyJSON (= 5.0.0)
   - Toast-Swift (~> 5.0.0)
 
@@ -39,6 +41,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SwiftGifOrigin
     - SwiftyJSON
     - Toast-Swift
 
@@ -52,9 +55,10 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: cd0f118c07d4011cfbb1520865adb4662588f574
+PODFILE CHECKSUM: 26b8180757d85155a443e2285ac3c92e9a95cb00
 
 COCOAPODS: 1.10.1

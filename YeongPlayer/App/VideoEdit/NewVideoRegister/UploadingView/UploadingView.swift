@@ -26,9 +26,9 @@ class UploadingView : XibView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if isInitailized{
+        if isInitialized {
             initialize()
-            isInitailized = false
+            isInitialized = false
         }
     }
     

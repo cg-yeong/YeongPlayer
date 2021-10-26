@@ -36,6 +36,11 @@ class VoiceRecordView: XibView, WKNavigationDelegate {
     @IBOutlet weak var funcInputBtn: UIButton!
     @IBOutlet weak var inputBaseView: UIView!
     
+    @IBOutlet weak var albumBtn: UIButton!
+    @IBOutlet weak var cameraBtn: UIButton!
+    @IBOutlet weak var movieBtn: UIButton!
+    @IBOutlet weak var voiceBtn: UIButton!
+    
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var chatSendBtn: UIButton!
     @IBOutlet weak var reRecordBtn: UIButton!

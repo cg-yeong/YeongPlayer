@@ -7,7 +7,7 @@ import SwiftyJSON
 import RxCocoa
 import RxSwift
 
-class RemoveVideoPopupView : XibView{
+class RemoveVideoPopupView: XibView{
  
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var cancel_btn: UIButton!
@@ -32,9 +32,9 @@ class RemoveVideoPopupView : XibView{
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if isInitailized{
+        if isInitialized {
             initialize()
-            isInitailized = false
+            isInitialized = false
         }
     }
     

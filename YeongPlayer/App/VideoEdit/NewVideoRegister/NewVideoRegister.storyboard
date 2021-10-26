@@ -11,7 +11,7 @@
         <!--New Video Record View Controller-->
         <scene sceneID="1Qv-lB-oYB">
             <objects>
-                <viewController storyboardIdentifier="NewvideoRecorder" modalPresentationStyle="fullScreen" id="Jdj-2q-unj" customClass="NewVideoRecordViewController" customModule="chat_radar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewvideoRecorder" modalPresentationStyle="fullScreen" id="Jdj-2q-unj" customClass="NewVideoRecordViewController" customModule="YeongPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QsG-uw-xmB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
         <!--New Video Editor Controller-->
         <scene sceneID="jxp-Wi-OT3">
             <objects>
-                <viewController storyboardIdentifier="NewvideoEditor" modalPresentationStyle="fullScreen" id="iRA-fy-EXE" customClass="NewVideoEditorController" customModule="chat_radar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewvideoEditor" modalPresentationStyle="fullScreen" id="iRA-fy-EXE" customClass="NewVideoEditorController" customModule="YeongPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u06-NJ-JtQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,7 +380,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeG-wN-KTH" customClass="NewABVideoRangeSlider" customModule="chat_radar" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeG-wN-KTH" customClass="NewABVideoRangeSlider" customModule="YeongPlayer" customModuleProvider="target">
                                         <rect key="frame" x="40" y="26" width="295" height="63"/>
                                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
