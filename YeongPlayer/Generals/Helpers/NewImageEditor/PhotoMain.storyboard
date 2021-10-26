@@ -62,6 +62,9 @@
                                                             </constraints>
                                                             <inset key="imageEdgeInsets" minX="10" minY="5" maxX="5" maxY="10"/>
                                                             <state key="normal" image="btnImgDlt"/>
+                                                            <connections>
+                                                                <action selector="tapRemove:" destination="NmD-HF-7la" eventType="touchUpInside" id="Huz-4K-KQe"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </view>
@@ -116,7 +119,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="보내기 10">
+                                        <state key="normal" title="보내기">
                                             <color key="titleColor" red="1" green="0.2666666667" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -174,9 +177,9 @@
                         <outlet property="albums_imageView" destination="cZk-4W-6V7" id="Ere-lW-4fI"/>
                         <outlet property="back_btn" destination="Fpc-Wx-Zr4" id="MzH-5g-c8O"/>
                         <outlet property="collectionView" destination="0cX-cy-ifL" id="Bro-Ep-Ad7"/>
+                        <outlet property="next_btn" destination="Ue3-DE-FfP" id="KKx-a4-Y1x"/>
                         <outlet property="photoStackView" destination="MXe-g5-TqU" id="V4X-6x-qMx"/>
                         <outlet property="photo_view" destination="ujc-Dt-NyM" id="aMb-yb-aTg"/>
-                        <outlet property="send_btn" destination="Ue3-DE-FfP" id="KKx-a4-Y1x"/>
                         <outlet property="title_view" destination="TOP-fs-QLi" id="PwX-ww-1eS"/>
                     </connections>
                 </viewController>

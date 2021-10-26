@@ -17,5 +17,40 @@ class PhotoAlbumView: XibView {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView_heightConstant: NSLayoutConstraint!
     
+    var didSelectAlbum: ((PLAlbum) -> Void)?
+    var albums: [PLAlbum] = []
+    var albumsManager: PLAlbumManager!
+    var dbag = DisposeBag()
+    
+    var hView: UIView!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if isInitialized {
+            initialize()
+        }
+    }
+    
+    override func removeFromSuperview() {
+        App.module.presenter.contextView = nil
+        super.removeFromSuperview()
+    }
+    
+    func initialize() {
+        setView()
+        bind()
+    }
+    
+    func setView() {
+        
+    }
+    
+    func setupTableView() {
+        
+    }
+    
+    func bind() {
+        
+    }
     
 }

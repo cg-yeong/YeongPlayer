@@ -221,11 +221,11 @@ extension VoiceRecordView {
     }
     
     
-    func setFetchPhoto() {
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        self.fetchResults = PHAsset.fetchAssets(with: fetchOptions)
-        self.photoCollectionView.reloadData()
-    }
+//    func setFetchPhoto() {
+//        let fetchOptions = PHFetchOptions()
+//        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+//        self.fetchResults = PHAsset.fetchAssets(with: fetchOptions)
+//        self.photoCollectionView.reloadData()
+//    }
     
 }

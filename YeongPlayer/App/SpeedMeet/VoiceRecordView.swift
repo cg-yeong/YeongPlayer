@@ -10,15 +10,15 @@ import RxSwift
 import Lottie
 import AVFoundation
 import Photos
+import WebKit
 
-class VoiceRecordView: XibView {
+class VoiceRecordView: XibView, WKNavigationDelegate {
     
     
     
     @IBOutlet weak var mainView: UIView!
     
     @IBOutlet weak var recordIntputView: UIView!
-    @IBOutlet weak var albumInputView: UIView!
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
     @IBOutlet weak var userContentArea: UIView!
@@ -26,8 +26,6 @@ class VoiceRecordView: XibView {
     @IBOutlet weak var chatContainerView: UIView!
     @IBOutlet weak var chatCollectionView: UICollectionView!
     
-    @IBOutlet weak var photoCollectionView: UICollectionView!
-    @IBOutlet weak var getMediaAlbum: UIButton!
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var moreBtn: UIButton!
@@ -35,15 +33,16 @@ class VoiceRecordView: XibView {
     @IBOutlet weak var quitChat: UIButton!
     @IBOutlet weak var reportQuitChat: UIButton!
     
+    @IBOutlet weak var funcInputBtn: UIButton!
+    @IBOutlet weak var inputBaseView: UIView!
+    
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var chatSendBtn: UIButton!
-    @IBOutlet weak var recordInputBtn: UIButton!
     @IBOutlet weak var reRecordBtn: UIButton!
     @IBOutlet weak var recordSendBtn: UIButton!
     @IBOutlet weak var recordingBtn: UIButton!
     @IBOutlet weak var noticeLabel: UILabel!
     @IBOutlet weak var txtInput: UITextField!
-    @IBOutlet weak var fileAlbum: UIButton!
     
     @IBOutlet weak var pumpLottieView: UIView!
     @IBOutlet weak var progressBarView: UIView!
@@ -67,7 +66,7 @@ class VoiceRecordView: XibView {
     var audioPlayer: AVAudioPlayer?
     var audioRecorder: AVAudioRecorder?
     var recordTimer: Timer?
-    
+    var web: WKWebView!
     // 사진 - 
     var fetchResults: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
@@ -77,11 +76,25 @@ class VoiceRecordView: XibView {
         super.layoutSubviews()
         if isInitialized {
             isInitialized = false
+            
             setup()
             bind()
+            
+            
         }
+        
     }
-    
+    func createWeb() {
+        web = WKWebView(frame: CGRect(x: chatContainerView.bounds.minX,
+                                                     y: chatContainerView.bounds.minY,
+                                                     width: chatCollectionView.bounds.width, height: chatCollectionView.bounds.height))
+        web.navigationDelegate = self
+        self.chatContainerView.addSubview(web)
+        
+        let myURL = URL(string: "https://www.daum.net")
+        let req = URLRequest(url: myURL!)
+        web.load(req)
+    }
     func setup() {
         setView()
         addObserver()
@@ -91,7 +104,7 @@ class VoiceRecordView: XibView {
         initProgressView()
         setRecordView(nowRecordState)
         
-        setFetchPhoto()
+        //setFetchPhoto()
 
         
     }
@@ -156,7 +169,7 @@ extension VoiceRecordView: PHPhotoLibraryChangeObserver {
     
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         // fetchData
-        setFetchPhoto()
+        // setFetchPhoto()
     }
     
 }

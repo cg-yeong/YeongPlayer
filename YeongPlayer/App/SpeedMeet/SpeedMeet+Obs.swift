@@ -29,10 +29,17 @@ extension VoiceRecordView {
                 let bottomPadding = window.safeAreaInsets.bottom
                 self.stopAudio()
                 self.recordIntputView.isHidden = true
-                self.albumInputView.isHidden = true
+                self.inputBaseView.isHidden = true
+                
+//                let webheight = self.web.scrollView.contentSize.height
+//                let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: self.keyboardConstraint.constant, right: 0)
                 UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut) {
                     self.keyboardConstraint.constant = keyboardSize.height - bottomPadding
                     log.d(self.keyboardConstraint.constant)
+//                    self.web.scrollView.contentInset = contentInset
+//                    self.web.scrollView.scrollIndicatorInsets = contentInset
+//                    self.web.scrollView.contentOffset = CGPoint(x: self.web.scrollView.contentOffset.x, y: 0 + self.keyboardConstraint.constant)
+                    //self.chatContainerView.frame.size.height = self.chatContainerView.frame.size.height - self.keyboardConstraint.constant
                     self.layoutIfNeeded()
                 } completion: { _ in
                     
@@ -45,16 +52,17 @@ extension VoiceRecordView {
         
         let userInfo = sender.userInfo!
         let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
-        UIView.animate(withDuration: duration) {
-//            if self.recordInputBtn.isSelected {
-//                self.keyboardConstraint.constant = 0
-//                self.btnInputView.isHidden = true
-//            }
-            
-            self.layoutIfNeeded()
-        } completion: { _ in
-            
+        
+        if self.inputBaseView.isHidden {
+            UIView.animate(withDuration: duration) {
+                self.keyboardConstraint.constant = 0
+                self.layoutIfNeeded()
+            } completion: { _ in
+                
+            }
         }
+        
+        
 
         
         
@@ -65,7 +73,7 @@ extension VoiceRecordView {
         self.stopAudio()
         UIView.animate(withDuration: 0.25) {
             self.recordIntputView.isHidden = true
-            self.albumInputView.isHidden = true
+            self.inputBaseView.isHidden = true
             self.keyboardConstraint.constant = 0
             self.layoutIfNeeded()
         }

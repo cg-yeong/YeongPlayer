@@ -45,13 +45,13 @@ extension VoiceRecordView {
                 self.sendMessage()
             }.disposed(by: bag)
         
-        fileAlbum.rx.tap
+        funcInputBtn.rx.tap
             .bind {
                 self.endEditing(true)
                 self.recordIntputView.isHidden = true
-                
+
                 if self.keyboardConstraint.constant != 0 {
-                    if !self.albumInputView.isHidden {
+                    if !self.inputBaseView.isHidden {
                         self.stopAudio()
                         UIView.animate(withDuration: 0.25) {
                             self.keyboardConstraint.constant = 0
@@ -61,61 +61,38 @@ extension VoiceRecordView {
                 } else {
                     UIView.animate(withDuration: 0.25) {
                         self.keyboardConstraint.constant = (self.txtInput.inputView?.frame.maxY) ?? 302
-                        
+
                         self.layoutIfNeeded()
                     }
                 }
-                
-                self.albumInputView.isHidden.toggle()
-                self.fileAlbum.isSelected.toggle()
+
+                self.inputBaseView.isHidden.toggle()
+                self.funcInputBtn.isSelected.toggle()
             }.disposed(by: bag)
         
-        getMediaAlbum.rx.tap
-            .bind {
-                // 권한 먼저 묻기
-                Utility.askPhotoAuthorization { (photoGranted) in
-                    if photoGranted {
-                        DispatchQueue.main.async {
-                            let editorVC = UIStoryboard(name: "PhotoMain", bundle: nil).instantiateViewController(withIdentifier: "PhotoViewController") as! PhotoViewController
-                            editorVC.modalPresentationStyle = .fullScreen
-                            // editorVC.jsonData = data
-                            //App.module.presenter.visibleViewController?.present(editorVC, animated: true, completion: nil)
-                            UIApplication.shared.windows.first?.rootViewController?.present(editorVC, animated: true, completion: nil)
-                        }
-                    } else {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            if #available(iOS 10.0, *) {
-                                DispatchQueue.main.async {
-                                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                }                            } else {
-                                UIApplication.shared.openURL(url)
-                            }
-                        }
-                    }
-                }
-            }.disposed(by: bag)
         
-        recordInputBtn.rx.tap
-            .bind {
-                self.endEditing(true)
-                self.albumInputView.isHidden = true
-                if self.keyboardConstraint.constant != 0 {
-                    if !self.recordIntputView.isHidden {
-                        self.stopAudio()
-                        UIView.animate(withDuration: 0.25) {
-                            self.keyboardConstraint.constant = 0
-                            self.layoutIfNeeded()
-                        }
-                    }
-                } else {
-                    UIView.animate(withDuration: 0.25) {
-                        self.keyboardConstraint.constant = (self.txtInput.inputView?.frame.maxY) ?? 250
-                        self.layoutIfNeeded()
-                    }
-                }
-                self.recordIntputView.isHidden.toggle()
-                self.recordInputBtn.isSelected.toggle()
-            }.disposed(by: bag)
+        
+//        recordInputBtn.rx.tap
+//            .bind {
+//                self.endEditing(true)
+//                self.albumInputView.isHidden = true
+//                if self.keyboardConstraint.constant != 0 {
+//                    if !self.recordIntputView.isHidden {
+//                        self.stopAudio()
+//                        UIView.animate(withDuration: 0.25) {
+//                            self.keyboardConstraint.constant = 0
+//                            self.layoutIfNeeded()
+//                        }
+//                    }
+//                } else {
+//                    UIView.animate(withDuration: 0.25) {
+//                        self.keyboardConstraint.constant = (self.txtInput.inputView?.frame.maxY) ?? 250
+//                        self.layoutIfNeeded()
+//                    }
+//                }
+//                self.recordIntputView.isHidden.toggle()
+//                self.recordInputBtn.isSelected.toggle()
+//            }.disposed(by: bag)
         
         
         recordingBtn.rx.tap

@@ -97,6 +97,21 @@
 		66B06D5B26F42D7000288FE5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06D5A26F42D7000288FE5 /* Device.swift */; };
 		66B06D5E26F451D900288FE5 /* VoiceRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B06D5D26F451D900288FE5 /* VoiceRecordView.xib */; };
 		66B06D6026F45BC300288FE5 /* VoiceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06D5F26F45BC300288FE5 /* VoiceRecordView.swift */; };
+		66CB1477272785C70058ABBA /* FuncT.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CB1476272785C70058ABBA /* FuncT.xib */; };
+		66ED4E322722B21B009E18A8 /* AttachmentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E312722B21B009E18A8 /* AttachmentInput.swift */; };
+		66ED4E392726289D009E18A8 /* AttachmentInputConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E382726289D009E18A8 /* AttachmentInputConfiguration.swift */; };
+		66ED4E3C272628CD009E18A8 /* AttachmentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E3B272628CD009E18A8 /* AttachmentInputView.swift */; };
+		66ED4E3E27266672009E18A8 /* AttachmentInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E3D27266672009E18A8 /* AttachmentInputError.swift */; };
+		66ED4E402726678B009E18A8 /* AttachmentInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E3F2726678B009E18A8 /* AttachmentInputDelegate.swift */; };
+		66ED4E4227266933009E18A8 /* AttachmentInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66ED4E4127266933009E18A8 /* AttachmentInputView.xib */; };
+		66ED4E442726740B009E18A8 /* AttachmentInputViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E432726740B009E18A8 /* AttachmentInputViewLogic.swift */; };
+		66ED4E462726742F009E18A8 /* AttachmentInputUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E452726742F009E18A8 /* AttachmentInputUtil.swift */; };
+		66ED4E482726745C009E18A8 /* ImagePickerAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E472726745C009E18A8 /* ImagePickerAuthorization.swift */; };
+		66ED4E4A27267476009E18A8 /* AttachmentInputPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E4927267476009E18A8 /* AttachmentInputPhoto.swift */; };
+		66ED4E4C2726748E009E18A8 /* AttachmentInputPhotoStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E4B2726748E009E18A8 /* AttachmentInputPhotoStatus.swift */; };
+		66ED4E4F27267517009E18A8 /* AttachmentInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 66ED4E4D272674C7009E18A8 /* AttachmentInput.h */; };
+		66ED4E51272676EE009E18A8 /* BehaviorSubject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E50272676EE009E18A8 /* BehaviorSubject+.swift */; };
+		66ED4E532726772C009E18A8 /* ObservableType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E522726772C009E18A8 /* ObservableType+.swift */; };
 		927477C4A6FB4DC400C56631 /* Pods_YeongPlayer_YeongPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECE91A2B9B865C06CF495D9 /* Pods_YeongPlayer_YeongPlayerUITests.framework */; };
 		D01FB0F3BF08CCF423376E4B /* Pods_YeongPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33BCAB09CCAA6122463F455C /* Pods_YeongPlayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -224,6 +239,21 @@
 		66B06D5A26F42D7000288FE5 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		66B06D5D26F451D900288FE5 /* VoiceRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceRecordView.xib; sourceTree = "<group>"; };
 		66B06D5F26F45BC300288FE5 /* VoiceRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordView.swift; sourceTree = "<group>"; };
+		66CB1476272785C70058ABBA /* FuncT.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuncT.xib; sourceTree = "<group>"; };
+		66ED4E312722B21B009E18A8 /* AttachmentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInput.swift; sourceTree = "<group>"; };
+		66ED4E382726289D009E18A8 /* AttachmentInputConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputConfiguration.swift; sourceTree = "<group>"; };
+		66ED4E3B272628CD009E18A8 /* AttachmentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputView.swift; sourceTree = "<group>"; };
+		66ED4E3D27266672009E18A8 /* AttachmentInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputError.swift; sourceTree = "<group>"; };
+		66ED4E3F2726678B009E18A8 /* AttachmentInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputDelegate.swift; sourceTree = "<group>"; };
+		66ED4E4127266933009E18A8 /* AttachmentInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentInputView.xib; sourceTree = "<group>"; };
+		66ED4E432726740B009E18A8 /* AttachmentInputViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputViewLogic.swift; sourceTree = "<group>"; };
+		66ED4E452726742F009E18A8 /* AttachmentInputUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputUtil.swift; sourceTree = "<group>"; };
+		66ED4E472726745C009E18A8 /* ImagePickerAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerAuthorization.swift; sourceTree = "<group>"; };
+		66ED4E4927267476009E18A8 /* AttachmentInputPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputPhoto.swift; sourceTree = "<group>"; };
+		66ED4E4B2726748E009E18A8 /* AttachmentInputPhotoStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputPhotoStatus.swift; sourceTree = "<group>"; };
+		66ED4E4D272674C7009E18A8 /* AttachmentInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentInput.h; sourceTree = "<group>"; };
+		66ED4E50272676EE009E18A8 /* BehaviorSubject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorSubject+.swift"; sourceTree = "<group>"; };
+		66ED4E522726772C009E18A8 /* ObservableType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+.swift"; sourceTree = "<group>"; };
 		773C8344809C253B543AF6B7 /* Pods-YeongPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer.release.xcconfig"; path = "Target Support Files/Pods-YeongPlayer/Pods-YeongPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		EAEDDF31B19FBDEB058E6792 /* Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-YeongPlayer-YeongPlayerUITests/Pods-YeongPlayer-YeongPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,13 +331,12 @@
 			isa = PBXGroup;
 			children = (
 				668BEA41270C194E00D1E78C /* PhotoMain.storyboard */,
-				668BEA45270C24D000D1E78C /* PhotoViewController.swift */,
 				668BEA4D270C502000D1E78C /* ImageCell.swift */,
+				668BEA45270C24D000D1E78C /* PhotoViewController.swift */,
 				668BEA49270C3C7000D1E78C /* PhotoViewModel.swift */,
 				668BEA47270C3BC000D1E78C /* PhotoData.swift */,
-				668BEA56270E688800D1E78C /* PhotoAlbumView.swift */,
-				668BEA58270E691000D1E78C /* PhotoAlbumView.xib */,
-				668BEA4F270E681F00D1E78C /* Album */,
+				66ED4E3027223B12009E18A8 /* NewImageView */,
+				66ED4E372722B58C009E18A8 /* CropViewController */,
 			);
 			path = NewImageEditor;
 			sourceTree = "<group>";
@@ -379,10 +408,10 @@
 				66914DCC26FD4A18002794BE /* VC */,
 				669CC50826EA019700DBD08E /* AppDelegate.swift */,
 				669CC50A26EA019700DBD08E /* SceneDelegate.swift */,
+				669CC50E26EA019700DBD08E /* Main.storyboard */,
 				669CC50C26EA019700DBD08E /* ViewController.swift */,
 				66B06CE826EF438700288FE5 /* PreviewView.swift */,
 				66B06D0326F0956200288FE5 /* ABVideoRangeSlider */,
-				669CC50E26EA019700DBD08E /* Main.storyboard */,
 				669CC51126EA019800DBD08E /* Assets.xcassets */,
 				669CC51326EA019800DBD08E /* LaunchScreen.storyboard */,
 				669CC51626EA019800DBD08E /* Info.plist */,
@@ -467,6 +496,7 @@
 		66B06D2326F1C76500288FE5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				66CB1475272785B10058ABBA /* New Group */,
 				66B06D4126F425CC00288FE5 /* Application */,
 				66B06D5C26F44EE400288FE5 /* SpeedMeet */,
 				66B06D2A26F1E08200288FE5 /* VideoChat */,
@@ -547,6 +577,77 @@
 			path = SpeedMeet;
 			sourceTree = "<group>";
 		};
+		66CB1475272785B10058ABBA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				66CB1476272785C70058ABBA /* FuncT.xib */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		66ED4E3027223B12009E18A8 /* NewImageView */ = {
+			isa = PBXGroup;
+			children = (
+				668BEA56270E688800D1E78C /* PhotoAlbumView.swift */,
+				668BEA58270E691000D1E78C /* PhotoAlbumView.xib */,
+				66ED4E50272676EE009E18A8 /* BehaviorSubject+.swift */,
+				66ED4E522726772C009E18A8 /* ObservableType+.swift */,
+				668BEA4F270E681F00D1E78C /* Album */,
+				66ED4E332722B4C3009E18A8 /* AttachmentInput */,
+			);
+			path = NewImageView;
+			sourceTree = "<group>";
+		};
+		66ED4E332722B4C3009E18A8 /* AttachmentInput */ = {
+			isa = PBXGroup;
+			children = (
+				66ED4E342722B516009E18A8 /* Logic-ViewModel */,
+				66ED4E362722B537009E18A8 /* Etc */,
+				66ED4E352722B529009E18A8 /* View */,
+			);
+			path = AttachmentInput;
+			sourceTree = "<group>";
+		};
+		66ED4E342722B516009E18A8 /* Logic-ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66ED4E472726745C009E18A8 /* ImagePickerAuthorization.swift */,
+				66ED4E432726740B009E18A8 /* AttachmentInputViewLogic.swift */,
+				66ED4E452726742F009E18A8 /* AttachmentInputUtil.swift */,
+				66ED4E4927267476009E18A8 /* AttachmentInputPhoto.swift */,
+				66ED4E4B2726748E009E18A8 /* AttachmentInputPhotoStatus.swift */,
+			);
+			path = "Logic-ViewModel";
+			sourceTree = "<group>";
+		};
+		66ED4E352722B529009E18A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66ED4E3B272628CD009E18A8 /* AttachmentInputView.swift */,
+				66ED4E4127266933009E18A8 /* AttachmentInputView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66ED4E362722B537009E18A8 /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+				66ED4E312722B21B009E18A8 /* AttachmentInput.swift */,
+				66ED4E382726289D009E18A8 /* AttachmentInputConfiguration.swift */,
+				66ED4E3D27266672009E18A8 /* AttachmentInputError.swift */,
+				66ED4E3F2726678B009E18A8 /* AttachmentInputDelegate.swift */,
+				66ED4E4D272674C7009E18A8 /* AttachmentInput.h */,
+			);
+			path = Etc;
+			sourceTree = "<group>";
+		};
+		66ED4E372722B58C009E18A8 /* CropViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CropViewController;
+			sourceTree = "<group>";
+		};
 		6B5726069DA6433AA9216819 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,12 +674,24 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		66ED4E4E27267506009E18A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66ED4E4F27267517009E18A8 /* AttachmentInput.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		669CC50426EA019700DBD08E /* YeongPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669CC52F26EA019800DBD08E /* Build configuration list for PBXNativeTarget "YeongPlayer" */;
 			buildPhases = (
 				743C2AFCD42512EA254046A3 /* [CP] Check Pods Manifest.lock */,
+				66ED4E4E27267506009E18A8 /* Headers */,
 				669CC50126EA019700DBD08E /* Sources */,
 				669CC50226EA019700DBD08E /* Frameworks */,
 				669CC50326EA019700DBD08E /* Resources */,
@@ -682,7 +795,9 @@
 				66B06D0C26F0959000288FE5 /* BorderLine2.png in Resources */,
 				669CC51526EA019800DBD08E /* LaunchScreen.storyboard in Resources */,
 				66914DC926FC67D9002794BE /* RecordProgressView.xib in Resources */,
+				66CB1477272785C70058ABBA /* FuncT.xib in Resources */,
 				669CC51226EA019800DBD08E /* Assets.xcassets in Resources */,
+				66ED4E4227266933009E18A8 /* AttachmentInputView.xib in Resources */,
 				66914DEA2702D1B5002794BE /* RecordContainerView.xib in Resources */,
 				668BEA42270C194E00D1E78C /* PhotoMain.storyboard in Resources */,
 				66026CFA26F480CA0092EF16 /* LottieImage in Resources */,
@@ -837,16 +952,19 @@
 				6687E75827030424002E331A /* RecordViewModel+AudioControl.swift in Sources */,
 				66026CFE26F485730092EF16 /* RecordViewModel.swift in Sources */,
 				66914DBF26FC3263002794BE /* RecordProgressView.swift in Sources */,
+				66ED4E462726742F009E18A8 /* AttachmentInputUtil.swift in Sources */,
 				6687E74E2702D8DF002E331A /* ExtAudioConverter.m in Sources */,
 				66B06D1726F09AED00288FE5 /* ABThumbnailsManager.swift in Sources */,
 				668BEA44270C22EE00D1E78C /* Utility.swift in Sources */,
 				66B06D5526F42BF700288FE5 /* Shared.swift in Sources */,
 				6687E7562702E7F3002E331A /* ChatCell.swift in Sources */,
+				66ED4E532726772C009E18A8 /* ObservableType+.swift in Sources */,
 				66026CFC26F484990092EF16 /* RecordModel.swift in Sources */,
 				66B06D5326F42BF100288FE5 /* Common.swift in Sources */,
 				668BEA4A270C3C7000D1E78C /* PhotoViewModel.swift in Sources */,
 				66B06D3E26F3438B00288FE5 /* SpeedTalk+Observer.swift in Sources */,
 				66B06D5B26F42D7000288FE5 /* Device.swift in Sources */,
+				66ED4E3E27266672009E18A8 /* AttachmentInputError.swift in Sources */,
 				668BEA0C270BDBEB00D1E78C /* AlbumCell.swift in Sources */,
 				66914DEB2702D1B5002794BE /* RecordContainerView.swift in Sources */,
 				66B06D4926F4263700288FE5 /* AppAbout.swift in Sources */,
@@ -855,15 +973,18 @@
 				6687E7452702D510002E331A /* VoiceRecordView+Cell.swift in Sources */,
 				66B06CE926EF438700288FE5 /* PreviewView.swift in Sources */,
 				66B06D3826F31CA800288FE5 /* RankView.swift in Sources */,
+				66ED4E392726289D009E18A8 /* AttachmentInputConfiguration.swift in Sources */,
 				66B06D1926F168D000288FE5 /* ABVideoHelper.swift in Sources */,
 				66929E4F26EAF07000BDD7CB /* VideoSelectVC.swift in Sources */,
 				66B06D4726F4262500288FE5 /* AppModule.swift in Sources */,
 				66B06D4526F4260C00288FE5 /* AppCore.swift in Sources */,
 				66B06D5926F42D3F00288FE5 /* PresenterTransfer.swift in Sources */,
 				66B06CE526EAF1CF00288FE5 /* VideoEditorVC.swift in Sources */,
+				66ED4E482726745C009E18A8 /* ImagePickerAuthorization.swift in Sources */,
 				66914DE026FDACD8002794BE /* SpeedMeet+Obs.swift in Sources */,
 				669CC50B26EA019700DBD08E /* SceneDelegate.swift in Sources */,
 				66B06D1F26F1B65E00288FE5 /* Logger.swift in Sources */,
+				66ED4E402726678B009E18A8 /* AttachmentInputDelegate.swift in Sources */,
 				66B06D4F26F42BE500288FE5 /* Cache.swift in Sources */,
 				66914DBA26FC12FC002794BE /* WKWebViewJavascriptBridge.swift in Sources */,
 				6687E75A27030AB1002E331A /* RecordMsgPlayer.swift in Sources */,
@@ -872,6 +993,7 @@
 				66B06D4326F425EB00288FE5 /* App.swift in Sources */,
 				66B06D2E26F1E1AD00288FE5 /* VideoChatView.swift in Sources */,
 				66B06D1326F096FD00288FE5 /* ABEndIndicator.swift in Sources */,
+				66ED4E322722B21B009E18A8 /* AttachmentInput.swift in Sources */,
 				66B06D6026F45BC300288FE5 /* VoiceRecordView.swift in Sources */,
 				66B06D1526F0977500288FE5 /* ABProgressIndicator.swift in Sources */,
 				66B06D1B26F1831300288FE5 /* ABTimeView.swift in Sources */,
@@ -880,15 +1002,20 @@
 				66B06D3626F311F000288FE5 /* UIView+Genie.swift in Sources */,
 				66B06D3426F2DE0B00288FE5 /* Extension.swift in Sources */,
 				66B06D1D26F1884400288FE5 /* ABVideoRangeSlider.swift in Sources */,
+				66ED4E442726740B009E18A8 /* AttachmentInputViewLogic.swift in Sources */,
 				66B06D5726F42D2D00288FE5 /* Presenter.swift in Sources */,
 				66929E4D26EAF05900BDD7CB /* VideoRecordVC.swift in Sources */,
 				66B06D2126F1C5A300288FE5 /* XibView.swift in Sources */,
 				6687E7502702E2DC002E331A /* RecordCell.swift in Sources */,
 				66914DC326FC4C29002794BE /* VoiceReocrdView+func.swift in Sources */,
 				66B06D4026F41E8800288FE5 /* VideoChatView+Cell.swift in Sources */,
+				66ED4E4C2726748E009E18A8 /* AttachmentInputPhotoStatus.swift in Sources */,
 				66B06D1126F0964600288FE5 /* ABStartIndicator.swift in Sources */,
+				66ED4E4A27267476009E18A8 /* AttachmentInputPhoto.swift in Sources */,
+				66ED4E51272676EE009E18A8 /* BehaviorSubject+.swift in Sources */,
 				66B06D4B26F4264400288FE5 /* AppData.swift in Sources */,
 				668BEA55270E685B00D1E78C /* PLAlbumCell.swift in Sources */,
+				66ED4E3C272628CD009E18A8 /* AttachmentInputView.swift in Sources */,
 				668BEA46270C24D000D1E78C /* PhotoViewController.swift in Sources */,
 				668BEA4E270C502000D1E78C /* ImageCell.swift in Sources */,
 			);

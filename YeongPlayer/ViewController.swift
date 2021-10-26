@@ -8,13 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var album: UIButton!
     @IBOutlet weak var camera: UIButton!
     @IBOutlet weak var videoChat: UIButton!
     @IBOutlet weak var record: UIButton!
+    @IBOutlet weak var functionTest: UIButton!
     
     var bag = DisposeBag()
     
@@ -23,14 +25,36 @@ class ViewController: UIViewController {
     var videoSelector: String { return "videoSelector" }
     var videoEditor: String { return "videoEditor" }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         bind()
         
+        
+        
     }
-
+    func createWeb() {
+        let web: WKWebView = WKWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        web.navigationDelegate = self
+        self.view.addSubview(web)
+        
+        let myURL = URL(string: "https://www.naver.com")
+        let req = URLRequest(url: myURL!)
+        web.load(req)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.frame.size.height = 300
+        webView.scrollView.contentSize = webView.frame.size
+    }
+    
     func bind() {
+        functionTest.rx.tap
+            .bind { _ in
+                
+            }.disposed(by: bag)
+        
         album.rx.tap
             .bind { _ in
                 print("앨범 ㅋ킄")
