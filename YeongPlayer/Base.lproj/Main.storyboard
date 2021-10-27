@@ -50,9 +50,9 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXQ-zV-f39">
-                                <rect key="frame" x="155" y="76" width="65" height="30"/>
+                                <rect key="frame" x="160.5" y="76" width="54" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="기능테스트"/>
+                                <state key="normal" title="TV LIVE"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,9 +71,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TV_Live" destination="RXQ-zV-f39" id="YOW-VP-hf5"/>
                         <outlet property="album" destination="8zQ-ug-9yS" id="KB4-ck-V02"/>
                         <outlet property="camera" destination="RXp-cS-cnw" id="QEs-vg-9eD"/>
-                        <outlet property="functionTest" destination="RXQ-zV-f39" id="YOW-VP-hf5"/>
                         <outlet property="record" destination="4Yf-nS-UJb" id="zts-JG-GQu"/>
                         <outlet property="videoChat" destination="6q4-mj-bvO" id="n1P-Vm-wON"/>
                     </connections>

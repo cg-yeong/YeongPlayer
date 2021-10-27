@@ -96,7 +96,7 @@
 		66B06D5B26F42D7000288FE5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06D5A26F42D7000288FE5 /* Device.swift */; };
 		66B06D5E26F451D900288FE5 /* VoiceRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66B06D5D26F451D900288FE5 /* VoiceRecordView.xib */; };
 		66B06D6026F45BC300288FE5 /* VoiceRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06D5F26F45BC300288FE5 /* VoiceRecordView.swift */; };
-		66CB1477272785C70058ABBA /* FuncT.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CB1476272785C70058ABBA /* FuncT.xib */; };
+		66CB1477272785C70058ABBA /* TV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CB1476272785C70058ABBA /* TV.xib */; };
 		66CB14A62727BAB20058ABBA /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14A12727BAB20058ABBA /* Permission.swift */; };
 		66CB14A72727BAB20058ABBA /* NotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14A22727BAB20058ABBA /* NotificationPermission.swift */; };
 		66CB14A82727BAB20058ABBA /* PhotosPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14A32727BAB20058ABBA /* PhotosPermission.swift */; };
@@ -105,6 +105,11 @@
 		66CB14AF2727BB7F0058ABBA /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14AC2727BB7F0058ABBA /* Alert.swift */; };
 		66CB14B02727BB7F0058ABBA /* NotifyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14AD2727BB7F0058ABBA /* NotifyDelegate.swift */; };
 		66CB14B12727BB7F0058ABBA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14AE2727BB7F0058ABBA /* Toast.swift */; };
+		66CB14C92728D3F10058ABBA /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14C82728D3F10058ABBA /* TV.swift */; };
+		66CB14CC272912BA0058ABBA /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66CB14CB272912BA0058ABBA /* TextCell.xib */; };
+		66CB14CE272917290058ABBA /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14CD272917290058ABBA /* TextCell.swift */; };
+		66CB14D027292E030058ABBA /* TV+func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14CF27292E030058ABBA /* TV+func.swift */; };
+		66CB14D227292E080058ABBA /* TV+bind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CB14D127292E080058ABBA /* TV+bind.swift */; };
 		66ED4E322722B21B009E18A8 /* AttachmentInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E312722B21B009E18A8 /* AttachmentInput.swift */; };
 		66ED4E392726289D009E18A8 /* AttachmentInputConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E382726289D009E18A8 /* AttachmentInputConfiguration.swift */; };
 		66ED4E3C272628CD009E18A8 /* AttachmentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4E3B272628CD009E18A8 /* AttachmentInputView.swift */; };
@@ -245,7 +250,7 @@
 		66B06D5A26F42D7000288FE5 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		66B06D5D26F451D900288FE5 /* VoiceRecordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceRecordView.xib; sourceTree = "<group>"; };
 		66B06D5F26F45BC300288FE5 /* VoiceRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordView.swift; sourceTree = "<group>"; };
-		66CB1476272785C70058ABBA /* FuncT.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuncT.xib; sourceTree = "<group>"; };
+		66CB1476272785C70058ABBA /* TV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TV.xib; sourceTree = "<group>"; };
 		66CB14A12727BAB20058ABBA /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		66CB14A22727BAB20058ABBA /* NotificationPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPermission.swift; sourceTree = "<group>"; };
 		66CB14A32727BAB20058ABBA /* PhotosPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosPermission.swift; sourceTree = "<group>"; };
@@ -254,6 +259,11 @@
 		66CB14AC2727BB7F0058ABBA /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		66CB14AD2727BB7F0058ABBA /* NotifyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyDelegate.swift; sourceTree = "<group>"; };
 		66CB14AE2727BB7F0058ABBA /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		66CB14C82728D3F10058ABBA /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
+		66CB14CB272912BA0058ABBA /* TextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		66CB14CD272917290058ABBA /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		66CB14CF27292E030058ABBA /* TV+func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TV+func.swift"; sourceTree = "<group>"; };
+		66CB14D127292E080058ABBA /* TV+bind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TV+bind.swift"; sourceTree = "<group>"; };
 		66ED4E312722B21B009E18A8 /* AttachmentInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInput.swift; sourceTree = "<group>"; };
 		66ED4E382726289D009E18A8 /* AttachmentInputConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputConfiguration.swift; sourceTree = "<group>"; };
 		66ED4E3B272628CD009E18A8 /* AttachmentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentInputView.swift; sourceTree = "<group>"; };
@@ -425,7 +435,6 @@
 				669CC50E26EA019700DBD08E /* Main.storyboard */,
 				669CC50C26EA019700DBD08E /* ViewController.swift */,
 				66B06CE826EF438700288FE5 /* PreviewView.swift */,
-				66B06D0326F0956200288FE5 /* ABVideoRangeSlider */,
 				669CC51126EA019800DBD08E /* Assets.xcassets */,
 				669CC51326EA019800DBD08E /* LaunchScreen.storyboard */,
 				669CC51626EA019800DBD08E /* Info.plist */,
@@ -494,6 +503,7 @@
 		66B06D2226F1C72500288FE5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
+				66B06D0326F0956200288FE5 /* ABVideoRangeSlider */,
 				66CB14AB2727BB7F0058ABBA /* Notify */,
 				66CB14A02727BAB20058ABBA /* Permission */,
 				668BEA12270C0ECB00D1E78C /* Helpers */,
@@ -512,7 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				66CB14782727B71F0058ABBA /* VideoEdit */,
-				66CB1475272785B10058ABBA /* New Group */,
+				66CB1475272785B10058ABBA /* TV */,
 				66B06D4126F425CC00288FE5 /* Application */,
 				66B06D5C26F44EE400288FE5 /* SpeedMeet */,
 				66B06D2A26F1E08200288FE5 /* VideoChat */,
@@ -593,12 +603,16 @@
 			path = SpeedMeet;
 			sourceTree = "<group>";
 		};
-		66CB1475272785B10058ABBA /* New Group */ = {
+		66CB1475272785B10058ABBA /* TV */ = {
 			isa = PBXGroup;
 			children = (
-				66CB1476272785C70058ABBA /* FuncT.xib */,
+				66CB14CA272912AD0058ABBA /* Cell */,
+				66CB1476272785C70058ABBA /* TV.xib */,
+				66CB14C82728D3F10058ABBA /* TV.swift */,
+				66CB14D127292E080058ABBA /* TV+bind.swift */,
+				66CB14CF27292E030058ABBA /* TV+func.swift */,
 			);
-			path = "New Group";
+			path = TV;
 			sourceTree = "<group>";
 		};
 		66CB14782727B71F0058ABBA /* VideoEdit */ = {
@@ -628,6 +642,15 @@
 				66CB14AE2727BB7F0058ABBA /* Toast.swift */,
 			);
 			path = Notify;
+			sourceTree = "<group>";
+		};
+		66CB14CA272912AD0058ABBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				66CB14CB272912BA0058ABBA /* TextCell.xib */,
+				66CB14CD272917290058ABBA /* TextCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		66ED4E3027223B12009E18A8 /* NewImageView */ = {
@@ -840,7 +863,7 @@
 				66B06D0C26F0959000288FE5 /* BorderLine2.png in Resources */,
 				669CC51526EA019800DBD08E /* LaunchScreen.storyboard in Resources */,
 				66914DC926FC67D9002794BE /* RecordProgressView.xib in Resources */,
-				66CB1477272785C70058ABBA /* FuncT.xib in Resources */,
+				66CB1477272785C70058ABBA /* TV.xib in Resources */,
 				669CC51226EA019800DBD08E /* Assets.xcassets in Resources */,
 				66ED4E4227266933009E18A8 /* AttachmentInputView.xib in Resources */,
 				66914DEA2702D1B5002794BE /* RecordContainerView.xib in Resources */,
@@ -853,6 +876,7 @@
 				66B06D2C26F1E0A800288FE5 /* VideoChatView.xib in Resources */,
 				6687E7472702D5C6002E331A /* RecordCell.xib in Resources */,
 				66B06D3A26F31D6300288FE5 /* RankView.xib in Resources */,
+				66CB14CC272912BA0058ABBA /* TextCell.xib in Resources */,
 				66B06D5E26F451D900288FE5 /* VoiceRecordView.xib in Resources */,
 				66B06D0D26F0959000288FE5 /* ProgressIndicator2.png in Resources */,
 				66B06D0B26F0959000288FE5 /* StartIndicator2.png in Resources */,
@@ -1002,6 +1026,7 @@
 				66B06D1726F09AED00288FE5 /* ABThumbnailsManager.swift in Sources */,
 				668BEA44270C22EE00D1E78C /* Utility.swift in Sources */,
 				66CB14A72727BAB20058ABBA /* NotificationPermission.swift in Sources */,
+				66CB14D027292E030058ABBA /* TV+func.swift in Sources */,
 				66B06D5526F42BF700288FE5 /* Shared.swift in Sources */,
 				6687E7562702E7F3002E331A /* ChatCell.swift in Sources */,
 				66ED4E532726772C009E18A8 /* ObservableType+.swift in Sources */,
@@ -1026,6 +1051,7 @@
 				66CB14B02727BB7F0058ABBA /* NotifyDelegate.swift in Sources */,
 				66B06D4726F4262500288FE5 /* AppModule.swift in Sources */,
 				66B06D4526F4260C00288FE5 /* AppCore.swift in Sources */,
+				66CB14C92728D3F10058ABBA /* TV.swift in Sources */,
 				66B06D5926F42D3F00288FE5 /* PresenterTransfer.swift in Sources */,
 				66B06CE526EAF1CF00288FE5 /* VideoEditorVC.swift in Sources */,
 				66ED4E482726745C009E18A8 /* ImagePickerAuthorization.swift in Sources */,
@@ -1045,7 +1071,9 @@
 				66ED4E322722B21B009E18A8 /* AttachmentInput.swift in Sources */,
 				66B06D6026F45BC300288FE5 /* VoiceRecordView.swift in Sources */,
 				66B06D1526F0977500288FE5 /* ABProgressIndicator.swift in Sources */,
+				66CB14CE272917290058ABBA /* TextCell.swift in Sources */,
 				66CB14B12727BB7F0058ABBA /* Toast.swift in Sources */,
+				66CB14D227292E080058ABBA /* TV+bind.swift in Sources */,
 				66B06D1B26F1831300288FE5 /* ABTimeView.swift in Sources */,
 				668BEA57270E688800D1E78C /* PhotoAlbumView.swift in Sources */,
 				6687E7522702E4BA002E331A /* VoiceRecordView+Collection.swift in Sources */,

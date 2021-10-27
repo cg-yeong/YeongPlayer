@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import WebKit
+import SwiftyJSON
 
 class ViewController: UIViewController, WKNavigationDelegate {
 
@@ -16,7 +17,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var camera: UIButton!
     @IBOutlet weak var videoChat: UIButton!
     @IBOutlet weak var record: UIButton!
-    @IBOutlet weak var functionTest: UIButton!
+    @IBOutlet weak var TV_Live: UIButton!
     
     var bag = DisposeBag()
     
@@ -24,6 +25,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     var videoRecord: String { return "videoRecord" }
     var videoSelector: String { return "videoSelector" }
     var videoEditor: String { return "videoEditor" }
+    
     
     
     override func viewDidLoad() {
@@ -50,9 +52,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     func bind() {
-        functionTest.rx.tap
+        TV_Live.rx.tap
             .bind { _ in
-                
+                App.module.presenter.addSubview(.visibleView, type: TV.self) { view in
+                    App.module.presenter.contextView = view
+                    view.viewData = JSON()
+                }
             }.disposed(by: bag)
         
         album.rx.tap
