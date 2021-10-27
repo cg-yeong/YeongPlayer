@@ -37,26 +37,6 @@ class AlertAction {
     }
 }
 
-class CHAlert {
-    static func CustomAlert(on : Presenter.OnController = .navigationView, _ title : String, leftAction: AlertAction, rightAction: AlertAction){
-        App.module.presenter.addSubview(on, type: CustomPopupView.self){ view in
-            view.message = title
-            view.tag = 1010
-            
-            if !leftAction.title.isEmpty {
-                view.leftText = leftAction.title
-            }
-            
-            if !rightAction.title.isEmpty {
-                view.rightText = rightAction.title
-            }
-            
-            view.leftAction = leftAction.action
-            view.rightAction = rightAction.action
-        }
-    }
-    
-    
-    
+
     
     

@@ -56,7 +56,7 @@ extension RecordViewModel {
     func recordStop(_ audioRecorder: AVAudioRecorder, _ completion: (() -> Void)!) {
         if Int(audioRecorder.currentTime) < Int(self.recordModel.value.minSec)! {
 //            Toast.show("최소 \(self.recordModel.value.minSec)초 이상 녹음해주세요!", duration: 2.0)
-            Toast.showOnXib("최소 \(self.recordModel.value.minSec)초 이상 녹음해주세요!", duration: 2.0)
+            // Toast.showOnXib("최소 \(self.recordModel.value.minSec)초 이상 녹음해주세요!", duration: 2.0)
         } else {
             audioRecorder.stop()
         }

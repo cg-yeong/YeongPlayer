@@ -6,7 +6,7 @@
 //  Copyright © 2019 Inforex. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Photos
 
 protocol PhotosPermission{}

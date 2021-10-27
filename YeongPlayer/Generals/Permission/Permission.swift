@@ -14,19 +14,19 @@ import Contacts
 import UserNotifications
 
   // 위치,푸시,앨범,카메라,음성, 주소록
-class Permission : ContactPermission, PhotosPermission, NotificationPermission, AudioPermission, CameraPermission, LocationPermission {
-    enum requestType{ case Location, Notification, Photos, Camera, Microphone, Contact }
+class Permission : PhotosPermission, NotificationPermission, AudioPermission, CameraPermission {
+    enum requestType{ case Notification, Photos, Camera, Microphone }
     static let sharedInstance: Permission = { return Permission() }()
     var clLocationManager : CLLocationManager = CLLocationManager()
     
     func request(_ type : requestType, completeHandler : ((Bool) -> Void)? = nil){
         switch type {
-        case .Location: requestAuthorizationLocation(completeHandler)
+        //case .Location: requestAuthorizationLocation(completeHandler)
         case .Notification: requestAuthorizationNotification(completeHandler)
         case .Photos: requestAuthorizationPhotos(completeHandler)
         case .Camera: requestAuthorizationCamera(completeHandler)
         case .Microphone: requestAuthorizationAudio(completeHandler)
-        case .Contact: requestAuthorizationContact(completeHandler)
+        //case .Contact: requestAuthorizationContact(completeHandler)
         }
     }
     
@@ -35,12 +35,12 @@ class Permission : ContactPermission, PhotosPermission, NotificationPermission, 
      */
     class func request(_ type : requestType, completeHandler : ((Bool) -> Void)? = nil){
         switch type {
-        case .Location: if let completion  = completeHandler { completion(false) }
+        //case .Location: if let completion  = completeHandler { completion(false) }
         case .Notification: requestAuthorizationNotification(completeHandler)
         case .Photos: requestAuthorizationPhotos(completeHandler)
         case .Camera: requestAuthorizationCamera(completeHandler)
         case .Microphone: requestAuthorizationAudio(completeHandler)
-        case .Contact: requestAuthorizationContact(completeHandler)
+        //case .Contact: requestAuthorizationContact(completeHandler)
         }
     }
     
@@ -48,9 +48,9 @@ class Permission : ContactPermission, PhotosPermission, NotificationPermission, 
     func manualyAuthorization(_ type : requestType, _ cancel : (() -> Void)? = nil){
         var title = "" , message = ""
         switch type {
-        case .Location:
-            title = "위치 권한 설정"
-            message = "앱을 정상적으로 사용하기 위해서는 [위치]권한 설정이 필요합니다.\n설정>앱 권한에서 [위치]를 켜주세요"
+//        case .Location:
+//            title = "위치 권한 설정"
+//            message = "앱을 정상적으로 사용하기 위해서는 [위치]권한 설정이 필요합니다.\n설정>앱 권한에서 [위치]를 켜주세요"
         case .Notification:
             title = "알림 권한 설정"
             message = "앱을 정상적으로 사용하기 위해서는 [알림]권한 설정이 필요합니다.\n설정>앱 권한에서 [알림]를 켜주세요"
@@ -63,9 +63,9 @@ class Permission : ContactPermission, PhotosPermission, NotificationPermission, 
         case .Microphone:
             title = "마이크 권한 설정"
             message = "사진(동영상) 촬영 후 업로드를 하기 위해서는 [마이크]권한 설정이 필요합니다.\n설정>앱 권한에서 [마이크]를 켜주세요"
-        case .Contact:
-            title = "주소록 권한 설정"
-            message = "주소록 자동저장 기능을 이용하기 위해서는 [주소록]권한 설정이 필요합니다.\n설정>앱 권한에서 [주소록]을 켜주세요"
+//        case .Contact:
+//            title = "주소록 권한 설정"
+//            message = "주소록 자동저장 기능을 이용하기 위해서는 [주소록]권한 설정이 필요합니다.\n설정>앱 권한에서 [주소록]을 켜주세요"
         }
         
         DispatchQueue.main.async {

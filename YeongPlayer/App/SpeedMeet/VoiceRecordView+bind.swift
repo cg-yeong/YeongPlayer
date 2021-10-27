@@ -75,12 +75,7 @@ extension VoiceRecordView {
                 Utility.askMicAuthorization(callback: { (micGranted) in
                     if micGranted {
                         DispatchQueue.main.async {
-                            guard let recorderVC = UIStoryboard(name: "NewVideoRegister", bundle: nil).instantiateViewController(withIdentifier: "NewvideoRecorder") as? NewVideoRecordViewController else {
-                                return
-                            }
                             
-                            //recorderVC.viewData = data
-                            App.module.presenter.visibleViewController?.present(recorderVC, animated: true)
                         }
                     } else {
                         Permission.sharedInstance.manualyAuthorization(.Microphone)
@@ -133,7 +128,7 @@ extension VoiceRecordView {
                 if (memSex == "m" || memSex == "M") {
                     guard isVoucher == "y" else {
                         YeongAlert.baseAlert(message: "빠른만남 이용권이 필요한 서비스입니다.\n구매하시겠습니까?") {
-                            Toast.showOnXib("구매페이지로 이동하기~")
+                            Toast.show("구매페이지로 이동하기~", on: .visibleView)
                         }
                         return
                     }
@@ -143,7 +138,7 @@ extension VoiceRecordView {
                 if self.audioPlayer != nil {
                     if self.audioPlayer!.duration < TimeInterval(self.recordModel.minSec)! {
                         // 최소 시간 체크
-                        Toast.showOnXib("\(self.recordModel.minSec)초 이상 녹음해주세요~")
+                        Toast.show("\(self.recordModel.minSec)초 이상 녹음해주세요~", on: .visibleView)
                     } else {
                         self.sendFile()
                     }
