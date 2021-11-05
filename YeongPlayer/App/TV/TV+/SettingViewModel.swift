@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+class SettingViewModel {
+    let model = SettingModel()
+    
+    let bag = DisposeBag()
+    
+    var isSecretMode : Driver<Bool>
+    
+    init() {
+        isSecretMode = model.isSecretMode
+            .compactMap { $0 }
+            .asDriver(onErrorRecover: { _ in .empty() })
+            
+    }
+}

@@ -18,6 +18,10 @@ target 'YeongPlayer' do
   
   pod 'Toast-Swift' ,'~> 5.0.0'
   pod 'RxDataSources'
+
+#  pod 'XHQWebViewJavascriptBridge'
+
+
   # Pods for YeongPlayer
 
   target 'YeongPlayerTests' do

@@ -12,6 +12,16 @@ import RxCocoa
 
 extension TV {
     
+    @objc func detailTapped() {
+        if chatInput.isEditing {
+            chatDown()
+        } else {
+            
+        }
+    }
     
+    func chatDown() {
+        chatInput.endEditing(true)
+    }
     
 }

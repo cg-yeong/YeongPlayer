@@ -54,11 +54,18 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="TV LIVE"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dc-DI-u2T">
+                                <rect key="frame" x="147.5" y="214" width="80" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="webview"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7Dc-DI-u2T" firstAttribute="top" secondItem="8zQ-ug-9yS" secondAttribute="bottom" constant="34" id="1sg-IA-CGU"/>
                             <constraint firstItem="RXp-cS-cnw" firstAttribute="top" secondItem="8zQ-ug-9yS" secondAttribute="bottom" constant="100" id="LfH-Ak-NAH"/>
+                            <constraint firstItem="7Dc-DI-u2T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N5S-sK-lY7"/>
                             <constraint firstItem="4Yf-nS-UJb" firstAttribute="top" secondItem="6q4-mj-bvO" secondAttribute="bottom" constant="68" id="PiP-pQ-Uyt"/>
                             <constraint firstItem="6q4-mj-bvO" firstAttribute="top" secondItem="RXp-cS-cnw" secondAttribute="bottom" constant="76" id="R07-ms-2qn"/>
                             <constraint firstItem="4Yf-nS-UJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WW9-CX-kl0"/>
@@ -75,6 +82,7 @@
                         <outlet property="album" destination="8zQ-ug-9yS" id="KB4-ck-V02"/>
                         <outlet property="camera" destination="RXp-cS-cnw" id="QEs-vg-9eD"/>
                         <outlet property="record" destination="4Yf-nS-UJb" id="zts-JG-GQu"/>
+                        <outlet property="testtest" destination="7Dc-DI-u2T" id="F1r-Z6-csU"/>
                         <outlet property="videoChat" destination="6q4-mj-bvO" id="n1P-Vm-wON"/>
                     </connections>
                 </viewController>

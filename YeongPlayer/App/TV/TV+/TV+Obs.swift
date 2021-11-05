@@ -27,16 +27,15 @@ extension TV {
         let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
         let options = UIView.AnimationOptions(rawValue: curve << 16)
         
+        self.likeBtn.isHidden = true
+        self.chatSendBtn.isHidden = false
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let bottomPadding = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0
             self.constSpaceFromChatContainerView.constant = keyboardSize.height - bottomPadding
             self.gift_constraint_bottom.constant = keyboardSize.height - bottomPadding
             
-            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-                self.layoutIfNeeded()
-                self.likeBtn.isHidden = true
-                self.chatSendBtn.isHidden = false
-            }, completion: nil)
+            self.layoutIfNeeded()
         }
     }
     
@@ -46,6 +45,9 @@ extension TV {
         let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
         let options = UIView.AnimationOptions(rawValue: curve << 16)
         
+        self.chatSendBtn.isHidden = true
+        self.likeBtn.isHidden = false
+        
         if self.constSpaceFromChatContainerView.constant != 0 {
             self.constSpaceFromChatContainerView.constant = 0
         }
@@ -53,10 +55,6 @@ extension TV {
             self.gift_constraint_bottom.constant = 0
         }
         
-        UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
-            self.layoutIfNeeded()
-            self.chatSendBtn.isHidden = true
-            self.likeBtn.isHidden = false
-        }, completion: nil)
+        self.layoutIfNeeded()
     }
 }

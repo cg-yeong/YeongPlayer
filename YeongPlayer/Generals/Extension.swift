@@ -7,6 +7,8 @@
 
 import Photos
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UIColor {
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) {
@@ -53,6 +55,39 @@ extension String {
             return retStr
         }
     }
+    
+    var emojilessStringWithSubstitution: String {
+        let textWithoutEmoji = self.unicodeScalars
+            .filter { !$0.properties.isEmojiPresentation }
+            .filter { !$0.properties.isBidiMirrored }
+            .filter { $0 != "\u{2764}" }
+            .reduce("") { $0 + String($1) }
+        
+        return textWithoutEmoji
+    }
+    
+    func hasRegexCharacters() -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ`~!@#$%^&*()\\-_=+\\[{\\]}\\\\|;:'\",<.>/?\\s]$", options: .caseInsensitive)
+            if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
+                return true
+            }
+        } catch {
+            return false
+        }
+        return false
+    }
+    
+    var regexTxt: String {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ`~!@#$%^&*()\\-_=+\\[{\\]}\\\\|;:'\",<.>/?\\s]$", options: .useUnicodeWordBoundaries)
+            regex.firstMatch(in: self, options: .reportCompletion, range: NSMakeRange(0, self.count))
+        } catch {
+            
+        }
+        return ""
+    }
+    
 }
 
 extension Int {
@@ -180,5 +215,36 @@ extension UIApplication {
         } else {
             shared.openURL(url)
         }
+    }
+}
+
+extension Reactive where Base: UIButton {
+    public var isSelectedChanged: ControlProperty<Bool> {
+        return base.rx.controlProperty(editingEvents: [.allEditingEvents, .touchUpInside],
+                                       getter: { $0.isSelected },
+                                       setter: { $0.isSelected = $1 })
+    }
+    
+    public var isBtnSelected: ControlProperty<Bool> {
+        return base.rx.controlProperty(editingEvents: .touchUpInside,
+                                       getter: ({ button in
+                                                    button.isSelected
+                                                }),
+                                       setter: ({ button, selected in
+                                                    if button.isSelected != selected {
+                                                        button.isSelected = selected
+                                                    }
+                                                }))
+    }
+    
+}
+
+
+class NoPasteTextField: UITextField {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            return false
+        }
+        return super.canPerformAction(action, withSender: sender)
     }
 }

@@ -59,13 +59,54 @@ class TV: XibView {
     override func layoutSubviews() {
         super.layoutSubviews()
         if isInitialized {
-            bind()
+            
+            initialize()
+            
+            
             isInitialized = false
         }
     }
     
+    func initialize() {
+        
+        setView()
+        addObserver()
+        
+        // 권한체크
+        permissionCheck()
+        
+        bind()
+    }
+    
+    func setView() {
+        
+        videoView_pan.isEnabled = false
+    }
     
     
+    func permissionCheck() {
+        Permission.sharedInstance.request(.Camera, completeHandler: { allow in
+            if !allow {
+                Permission.sharedInstance.manualyAuthorization(.Camera)
+                self.microphoneCheck()
+            } else {
+                self.microphoneCheck()
+            }
+        })
+    }
+    func microphoneCheck() {
+        Permission.sharedInstance.request(.Microphone, completeHandler: { allow in
+            if !allow {
+                Permission.sharedInstance.manualyAuthorization(.Microphone)
+            } else {
+                DispatchQueue.main.async {
+                    
+                }
+            }
+        })
+    }
+    
+    // MARK: 플로팅모드
     /* 플로팅 모드로 전환 */
     @objc func toggleFloating() {
         isFloatingMode = !isFloatingMode
@@ -88,7 +129,7 @@ class TV: XibView {
             
             frame = CGRect(x: 50, y: 50, width: floating_view.frame.width, height: floating_view.frame.height)
             mainView.isHidden = true
-            
+            videoView_pan.isEnabled = true
             addSubview(floating_view)
             
         } else {
@@ -96,7 +137,7 @@ class TV: XibView {
             floating_view.removeFromSuperview()
             frame = UIScreen.main.bounds
             mainView.isHidden = false
-            
+            videoView_pan.isEnabled = false
 //            isFloatingMode = false
             
         }

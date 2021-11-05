@@ -18,6 +18,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var videoChat: UIButton!
     @IBOutlet weak var record: UIButton!
     @IBOutlet weak var TV_Live: UIButton!
+    @IBOutlet weak var testtest: UIButton!
     
     var bag = DisposeBag()
     
@@ -54,9 +55,18 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func bind() {
         TV_Live.rx.tap
             .bind { _ in
-                App.module.presenter.addSubview(.visibleView, type: TV.self) { view in
+                App.module.presenter.addSubview(.visibleView, type: TVSetting.self) { view in
                     App.module.presenter.contextView = view
                     view.viewData = JSON()
+                }
+            }.disposed(by: bag)
+        
+        testtest.rx.tap
+            .bind {
+                App.module.presenter.addSubview(.visibleView, type: ReceiveGiftList.self) { view in
+                    App.module.presenter.subView = view
+                    view.viewData = JSON()
+                    
                 }
             }.disposed(by: bag)
         

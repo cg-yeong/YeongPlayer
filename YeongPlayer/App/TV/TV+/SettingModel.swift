@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import RxRelay
+
+class SettingModel {
+    
+    
+    var isSecretMode = BehaviorRelay<Bool>(value: false)
+    
+}
