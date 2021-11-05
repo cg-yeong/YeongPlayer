@@ -67,8 +67,8 @@ extension String {
     }
     
     func hasRegexCharacters() -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ`~!@#$%^&*()\\-_=+\\[{\\]}\\\\|;:'\",<.>/?\\s]$", options: .caseInsensitive)
+        do { // $£•¥₩
+            let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ`~!@#$£•¥₩%^&*()\\-_=+\\[{\\]}\\\\|;:'\",<.>/?\\s]$", options: .caseInsensitive)
             if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
                 return true
             }
@@ -78,15 +78,7 @@ extension String {
         return false
     }
     
-    var regexTxt: String {
-        do {
-            let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ`~!@#$%^&*()\\-_=+\\[{\\]}\\\\|;:'\",<.>/?\\s]$", options: .useUnicodeWordBoundaries)
-            regex.firstMatch(in: self, options: .reportCompletion, range: NSMakeRange(0, self.count))
-        } catch {
-            
-        }
-        return ""
-    }
+    
     
 }
 
@@ -157,6 +149,15 @@ extension UIView {
         UIView.animate(withDuration: duration, delay: delay, options: [.curveLinear], animations: {
             self.frame.origin.y = self.bounds.height
         }, completion: completion)
+    }
+    
+    func getMaxCornerRadius(view: UIView) -> CGFloat {
+        let width = self.bounds.maxX - self.bounds.minX
+        let height = self.bounds.maxY - self.bounds.minY
+        
+        let gijun = min(width, height)
+        
+        return gijun.truncatingRemainder(dividingBy: 2)
     }
     
 }
@@ -248,3 +249,19 @@ class NoPasteTextField: UITextField {
         return super.canPerformAction(action, withSender: sender)
     }
 }
+
+class KindRadioButton: UIButton {
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.backgroundColor = .orange
+            } else {
+                self.backgroundColor = .lightGray
+            }
+        }
+    }
+    
+    
+}
+
+

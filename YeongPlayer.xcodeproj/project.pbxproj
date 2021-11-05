@@ -15,8 +15,6 @@
 		664983BF272BEEE7008C1EDE /* LiveTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983BE272BEEE7008C1EDE /* LiveTag.swift */; };
 		664983C1272F69AF008C1EDE /* LeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983C0272F69AF008C1EDE /* LeftAlignFlowLayout.swift */; };
 		664983C3272F7930008C1EDE /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983C2272F7930008C1EDE /* RadioButton.swift */; };
-		664983C5272FAE56008C1EDE /* SetViewers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664983C4272FAE56008C1EDE /* SetViewers.xib */; };
-		664983C7272FB04C008C1EDE /* SetViewers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983C6272FB04C008C1EDE /* SetViewers.swift */; };
 		664983C9272FBE84008C1EDE /* ReceiveGiftList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 664983C8272FBE84008C1EDE /* ReceiveGiftList.xib */; };
 		664983CB272FBEAE008C1EDE /* ReceiveGiftList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983CA272FBEAE008C1EDE /* ReceiveGiftList.swift */; };
 		664983CD272FC21B008C1EDE /* GiftList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664983CC272FC21B008C1EDE /* GiftList.swift */; };
@@ -72,6 +70,11 @@
 		669CC52026EA019800DBD08E /* YeongPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CC51F26EA019800DBD08E /* YeongPlayerTests.swift */; };
 		669CC52B26EA019800DBD08E /* YeongPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669CC52A26EA019800DBD08E /* YeongPlayerUITests.swift */; };
 		66A52E3327339EFA00A78B8A /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A52E3227339EFA00A78B8A /* AlignedCollectionViewFlowLayout.swift */; };
+		66A52E3B2734BFE500A78B8A /* CustomPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A52E362734BFE500A78B8A /* CustomPopupView.xib */; };
+		66A52E3C2734BFE500A78B8A /* RecordAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66A52E372734BFE500A78B8A /* RecordAlert.xib */; };
+		66A52E3D2734BFE500A78B8A /* CHAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A52E382734BFE500A78B8A /* CHAlert.swift */; };
+		66A52E3E2734BFE500A78B8A /* RecordAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A52E392734BFE500A78B8A /* RecordAlert.swift */; };
+		66A52E3F2734BFE500A78B8A /* CustomPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A52E3A2734BFE500A78B8A /* CustomPopupView.swift */; };
 		66B06CE526EAF1CF00288FE5 /* VideoEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06CE426EAF1CF00288FE5 /* VideoEditorVC.swift */; };
 		66B06CE926EF438700288FE5 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B06CE826EF438700288FE5 /* PreviewView.swift */; };
 		66B06D0A26F0959000288FE5 /* EndIndicator2.png in Resources */ = {isa = PBXBuildFile; fileRef = 66B06D0626F0959000288FE5 /* EndIndicator2.png */; };
@@ -189,8 +192,6 @@
 		664983BE272BEEE7008C1EDE /* LiveTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTag.swift; sourceTree = "<group>"; };
 		664983C0272F69AF008C1EDE /* LeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignFlowLayout.swift; sourceTree = "<group>"; };
 		664983C2272F7930008C1EDE /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		664983C4272FAE56008C1EDE /* SetViewers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetViewers.xib; sourceTree = "<group>"; };
-		664983C6272FB04C008C1EDE /* SetViewers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewers.swift; sourceTree = "<group>"; };
 		664983C8272FBE84008C1EDE /* ReceiveGiftList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveGiftList.xib; sourceTree = "<group>"; };
 		664983CA272FBEAE008C1EDE /* ReceiveGiftList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveGiftList.swift; sourceTree = "<group>"; };
 		664983CC272FC21B008C1EDE /* GiftList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftList.swift; sourceTree = "<group>"; };
@@ -255,6 +256,11 @@
 		669CC52A26EA019800DBD08E /* YeongPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeongPlayerUITests.swift; sourceTree = "<group>"; };
 		669CC52C26EA019800DBD08E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66A52E3227339EFA00A78B8A /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		66A52E362734BFE500A78B8A /* CustomPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopupView.xib; sourceTree = "<group>"; };
+		66A52E372734BFE500A78B8A /* RecordAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordAlert.xib; sourceTree = "<group>"; };
+		66A52E382734BFE500A78B8A /* CHAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHAlert.swift; sourceTree = "<group>"; };
+		66A52E392734BFE500A78B8A /* RecordAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAlert.swift; sourceTree = "<group>"; };
+		66A52E3A2734BFE500A78B8A /* CustomPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopupView.swift; sourceTree = "<group>"; };
 		66B06CE426EAF1CF00288FE5 /* VideoEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorVC.swift; sourceTree = "<group>"; };
 		66B06CE826EF438700288FE5 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		66B06D0626F0959000288FE5 /* EndIndicator2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EndIndicator2.png; sourceTree = "<group>"; };
@@ -373,6 +379,9 @@
 		664983DA273269EC008C1EDE /* TVSetting */ = {
 			isa = PBXGroup;
 			children = (
+				6698C2F0272BC5E70009246E /* TVSetting.xib */,
+				6698C2F2272BC6020009246E /* TVSetting.swift */,
+				664983C2272F7930008C1EDE /* RadioButton.swift */,
 			);
 			path = TVSetting;
 			sourceTree = "<group>";
@@ -532,6 +541,27 @@
 			path = YeongPlayerUITests;
 			sourceTree = "<group>";
 		};
+		66A52E342734B17500A78B8A /* Gift */ = {
+			isa = PBXGroup;
+			children = (
+				664983CA272FBEAE008C1EDE /* ReceiveGiftList.swift */,
+				664983C8272FBE84008C1EDE /* ReceiveGiftList.xib */,
+			);
+			path = Gift;
+			sourceTree = "<group>";
+		};
+		66A52E352734BFE500A78B8A /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				66A52E362734BFE500A78B8A /* CustomPopupView.xib */,
+				66A52E372734BFE500A78B8A /* RecordAlert.xib */,
+				66A52E382734BFE500A78B8A /* CHAlert.swift */,
+				66A52E392734BFE500A78B8A /* RecordAlert.swift */,
+				66A52E3A2734BFE500A78B8A /* CustomPopupView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		66B06D0326F0956200288FE5 /* ABVideoRangeSlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +600,7 @@
 		66B06D2226F1C72500288FE5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
+				66A52E352734BFE500A78B8A /* Alert */,
 				66B06D0326F0956200288FE5 /* ABVideoRangeSlider */,
 				66CB14AB2727BB7F0058ABBA /* Notify */,
 				66CB14A02727BAB20058ABBA /* Permission */,
@@ -675,19 +706,12 @@
 		66CB1475272785B10058ABBA /* TV */ = {
 			isa = PBXGroup;
 			children = (
-				664983DA273269EC008C1EDE /* TVSetting */,
 				66CB1476272785C70058ABBA /* TV.xib */,
 				66CB14C82728D3F10058ABBA /* TV.swift */,
-				66CB14CA272912AD0058ABBA /* Cell */,
 				66CB14D5272943790058ABBA /* TV+ */,
-				6698C2F0272BC5E70009246E /* TVSetting.xib */,
-				6698C2F2272BC6020009246E /* TVSetting.swift */,
-				664983C4272FAE56008C1EDE /* SetViewers.xib */,
-				664983C6272FB04C008C1EDE /* SetViewers.swift */,
-				664983C8272FBE84008C1EDE /* ReceiveGiftList.xib */,
-				664983CA272FBEAE008C1EDE /* ReceiveGiftList.swift */,
-				664983C2272F7930008C1EDE /* RadioButton.swift */,
-				664983C0272F69AF008C1EDE /* LeftAlignFlowLayout.swift */,
+				66CB14CA272912AD0058ABBA /* Cell */,
+				66A52E342734B17500A78B8A /* Gift */,
+				664983DA273269EC008C1EDE /* TVSetting */,
 			);
 			path = TV;
 			sourceTree = "<group>";
@@ -741,6 +765,7 @@
 				66CB14D127292E080058ABBA /* TV+bind.swift */,
 				66CB14CF27292E030058ABBA /* TV+func.swift */,
 				664983D627324BD2008C1EDE /* SettingViewModel.swift */,
+				664983C0272F69AF008C1EDE /* LeftAlignFlowLayout.swift */,
 				664983D827324BD9008C1EDE /* SettingModel.swift */,
 				66A52E3227339EFA00A78B8A /* AlignedCollectionViewFlowLayout.swift */,
 			);
@@ -1012,6 +1037,7 @@
 				668BEA59270E691000D1E78C /* PhotoAlbumView.xib in Resources */,
 				664983BD272BEB57008C1EDE /* LiveTag.xib in Resources */,
 				66B06D0A26F0959000288FE5 /* EndIndicator2.png in Resources */,
+				66A52E3B2734BFE500A78B8A /* CustomPopupView.xib in Resources */,
 				664983C9272FBE84008C1EDE /* ReceiveGiftList.xib in Resources */,
 				668BEA5B270E6AE900D1E78C /* PLAlbumCell.xib in Resources */,
 				66CB14DE272A276C0058ABBA /* webview.xib in Resources */,
@@ -1019,13 +1045,13 @@
 				66B06D2C26F1E0A800288FE5 /* VideoChatView.xib in Resources */,
 				6687E7472702D5C6002E331A /* RecordCell.xib in Resources */,
 				66B06D3A26F31D6300288FE5 /* RankView.xib in Resources */,
+				66A52E3C2734BFE500A78B8A /* RecordAlert.xib in Resources */,
 				66CB14CC272912BA0058ABBA /* TextCell.xib in Resources */,
 				6698C2F1272BC5E70009246E /* TVSetting.xib in Resources */,
 				664983D12730C552008C1EDE /* GiftList.xib in Resources */,
 				66B06D5E26F451D900288FE5 /* VoiceRecordView.xib in Resources */,
 				66B06D0D26F0959000288FE5 /* ProgressIndicator2.png in Resources */,
 				66B06D0B26F0959000288FE5 /* StartIndicator2.png in Resources */,
-				664983C5272FAE56008C1EDE /* SetViewers.xib in Resources */,
 				668BEA5D270EBA7900D1E78C /* AlbumCell.xib in Resources */,
 				669CC51026EA019700DBD08E /* Main.storyboard in Resources */,
 			);
@@ -1155,6 +1181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A52E3F2734BFE500A78B8A /* CustomPopupView.swift in Sources */,
 				66914DCB26FC7812002794BE /* VoiceRecordView+delegate.swift in Sources */,
 				669CC50D26EA019700DBD08E /* ViewController.swift in Sources */,
 				66B06D5126F42BEB00288FE5 /* Cookie.swift in Sources */,
@@ -1174,6 +1201,7 @@
 				668BEA44270C22EE00D1E78C /* Utility.swift in Sources */,
 				664983C1272F69AF008C1EDE /* LeftAlignFlowLayout.swift in Sources */,
 				66CB14A72727BAB20058ABBA /* NotificationPermission.swift in Sources */,
+				66A52E3E2734BFE500A78B8A /* RecordAlert.swift in Sources */,
 				66CB14D027292E030058ABBA /* TV+func.swift in Sources */,
 				66B06D5526F42BF700288FE5 /* Shared.swift in Sources */,
 				6687E7562702E7F3002E331A /* ChatCell.swift in Sources */,
@@ -1199,7 +1227,6 @@
 				66CB14EC272A335A0058ABBA /* WebViewJavascriptBridgeBase.m in Sources */,
 				66ED4E392726289D009E18A8 /* AttachmentInputConfiguration.swift in Sources */,
 				66B06D1926F168D000288FE5 /* ABVideoHelper.swift in Sources */,
-				664983C7272FB04C008C1EDE /* SetViewers.swift in Sources */,
 				66929E4F26EAF07000BDD7CB /* VideoSelectVC.swift in Sources */,
 				66CB14B02727BB7F0058ABBA /* NotifyDelegate.swift in Sources */,
 				66B06D4726F4262500288FE5 /* AppModule.swift in Sources */,
@@ -1216,6 +1243,7 @@
 				66ED4E402726678B009E18A8 /* AttachmentInputDelegate.swift in Sources */,
 				66B06D4F26F42BE500288FE5 /* Cache.swift in Sources */,
 				66914DBA26FC12FC002794BE /* WKWebViewJavascriptBridge.swift in Sources */,
+				66A52E3D2734BFE500A78B8A /* CHAlert.swift in Sources */,
 				6687E75A27030AB1002E331A /* RecordMsgPlayer.swift in Sources */,
 				66B06D0F26F0959A00288FE5 /* ABBorder.swift in Sources */,
 				66CB14A92727BAB20058ABBA /* AudioPermission.swift in Sources */,

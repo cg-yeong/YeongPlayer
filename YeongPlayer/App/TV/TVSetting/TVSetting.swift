@@ -22,33 +22,33 @@ class TVSetting: XibView {
     @IBOutlet weak var placeholderView: UIStackView!
     
     @IBOutlet weak var liveModeView: UIView!
-    @IBOutlet weak var generalLive: UIButton!
-    @IBOutlet weak var secretLive: UIButton!
+    @IBOutlet weak var generalLive: KindRadioButton!
+    @IBOutlet weak var secretLive: KindRadioButton!
     
-    @IBOutlet var liveButtons: [UIButton]!
     
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var pwPlaceholderLabel: UILabel!
+    @IBOutlet weak var pwSecureOnOff: UIButton!
     
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var settingViewHeightConst: NSLayoutConstraint!
     
-    
-    
-    
     @IBOutlet weak var liveStartBtn: UIButton!
+    
+    @IBOutlet var kindRadioBtns: [KindRadioButton]!
+    var shouldLetDeSelect = false // 라디오 버튼 선택한게 다시 눌러서 취소 될수 있는지
     
     private var lastSelectedIndexPath: IndexPath?
     
-    var isSecretSelected = BehaviorRelay<Bool>(value: false)
     
     
     let bag = DisposeBag()
-    let letters = ["일상", "개인", "음악", "스포츠", "기타", "저스트채팅", "asdfawefwfa", "일상", "개인", "음악", "스포츠", "기타", "저스트채팅", "asdfawefwfa", "일상aa", "개인dddd", "ss음악", "스포츠", "기ddddff타", "저스트채팅"]
+    let letters = ["일상", "개인", "음악", "스포츠", "기타", "저스트채팅"]
 //    let letters = ["일상", "개인", "음악", "스포츠", "기타", "저스트채팅"]
     
     
     
-    var isFirstCreated: Bool = true
+    var isFirstSetting: Bool = true
     
     
     /// 뷰들을 추가하거나 제거, 뷰들의 크기나 위치를 업데이트, 레이아웃 constraint 를 업데이트, 뷰와 관련된 기타 프로퍼티들을 업데이트
@@ -56,10 +56,15 @@ class TVSetting: XibView {
         super.layoutSubviews()
         if isInitialized {
             allInit()
+            setView()
+            
+            
             reload()
+            
+            
             isInitialized = false
         }
-        log.d("뷰 나오?")
+        
         
         
     }
@@ -81,14 +86,22 @@ class TVSetting: XibView {
     func allInit() {
         titleField.delegate = self
         passwordField.delegate = self
-        setView()
+        
         bind()
     }
     
     func setView() {
         buttonColor()
-        if !isFirstCreated {
+        
+        if isFirstSetting { // 수정화면이니까 소켓 콜백으로 오는거 세팅하기
+            generalLive.isSelected = true
+            secretLive.isSelected = false
             
+            passwordField.isHidden = true
+            pwPlaceholderLabel.isHidden = true
+            pwSecureOnOff.isHidden = true
+            
+            print(didSelectButton(selectedButton: nil)!.titleLabel!.text!)
         }
     }
     
@@ -104,7 +117,7 @@ class TVSetting: XibView {
 //            }.disposed(by: bag)
         
         
-      /* let titleFieldValid = titleField.rx.text.orEmpty
+        /*let titleFieldValid = titleField.rx.text.orEmpty
             .map { !$0.isEmpty }
             .share(replay: 1)
         titleFieldValid.bind(to: placeholderView.rx.isHidden)
@@ -118,34 +131,140 @@ class TVSetting: XibView {
             .bind { _ in
                 if !self.titleField.text!.isEmpty {
                     // Alert
+                    self.endEditing(true)
+                    CHAlert.CustomAlert(on: .visibleView, "작성 사항을 취소 하시겠습니까?", leftAction: AlertAction(title: "취소"), rightAction: AlertAction(title: "확인", action:  self.removeFromSuperview) )
                 } else {
                     self.removeFromSuperview()
                 }
             }.disposed(by: bag)
         
-        generalLive.rx.tap
-            .bind {
-                self.generalLive.isSelected = !self.generalLive.isSelected
-                print(self.generalLive.isSelected)
+        let pwFieldValid = passwordField.rx.text.orEmpty
+            .map{ !$0.isEmpty }
+            .distinctUntilChanged()
+            
+        pwFieldValid
+            .bind(to: pwPlaceholderLabel.rx.isHidden)
+            .disposed(by: bag)
+        
+        pwFieldValid
+            .map { !$0 }
+            .bind(to: pwSecureOnOff.rx.isHidden)
+            .disposed(by: bag)
+        
+//        passwordField.rx.text.orEmpty
+//            .map { !$0.isEmpty }
+//            .bind(to: pwPlaceholderLabel.rx.isHidden)
+//            .disposed(by: bag)
+        
+        pwSecureOnOff.rx.tap
+            .bind { _ in
+                self.passwordField.isSecureTextEntry = !self.passwordField.isSecureTextEntry
             }.disposed(by: bag)
         
+        kindRadioBtns.forEach { kind in
+            kind.rx.tap
+                .bind { _ in
+                    self.radioPressed(kind)
+                    print(kind.titleLabel!.text!, kind.isSelected, self.kindRadioBtns.firstIndex(where: { $0.isSelected })!)
+                    
+                    
+                    
+                }.disposed(by: bag)
+        }
         
+        generalLive.rx.tap
+            .bind {
+                
+            }.disposed(by: bag)
         
         secretLive.rx.tap
             .bind {
                 
             }.disposed(by: bag)
         
-        
-        
         liveStartBtn.rx.tap
             .bind {
-                self.validTitle()
+//                guard !self.titleField.text!.trimmingCharacters(in: .whitespaces).isEmpty else {
+//                    Toast.show("제목을 입력해주세요")
+//                    return
+//                }
+//
+//                if self.didSelectButton(selectedButton: nil)!.titleLabel!.text == "비밀방" {
+//                    guard !self.passwordField.text!.isEmpty else {
+//                        Toast.show("비밀번호를 설정해주세요.")
+//                        return
+//                    }
+//                }
+                
+                self.validTitle(completion: { retData in
+                    let result = retData as! Bool
+                    if result == true {
+                        print(" 데이터 점검해야 할거같은데? , 점검분기 토스트")
+                        
+                    } else {
+                        print(" 방송방 데이터 담아서 보내기 ")
+                        let params: [String : String] = [
+                            "cmd" : ""
+                        ]
+                        self.isFirstSetting = false
+                        // callscript funcName
+                    }
+                
+                    
+                })
+                
             }.disposed(by: bag)
        
         
     }
     
+    
+    func radioPressed(_ sender: UIButton) {
+        var currentKindBtn: UIButton? = nil
+        
+        if sender.isSelected { // 선택한것 누르는 건데 false로 아무 실행 안하게 처리해주기
+            if shouldLetDeSelect { // 선택했던것 다시 취소 : 지금은 실행 X
+                sender.isSelected = false
+                currentKindBtn = nil
+            }
+        } else { // 다른거 선택했을 때
+            kindRadioBtns.forEach { kind in
+                kind.isSelected = false
+                kind.backgroundColor = .lightGray
+                // 전체 취소
+            }
+            sender.isSelected = true // 누른 것만 선택되게
+            sender.backgroundColor = .orange
+            currentKindBtn = sender
+            _ = didSelectButton(selectedButton: currentKindBtn)
+            
+            
+            if sender == generalLive {
+                print("비밀번호 없어져라~")
+                self.passwordField.isHidden = true
+                self.pwPlaceholderLabel.isHidden = true
+                self.pwSecureOnOff.isHidden = true
+            } else if sender == secretLive {
+                print("비밀번호 창 나와라")
+                self.passwordField.isHidden = false
+                if (self.passwordField.text ?? "").isEmpty { // 비밀번호 입력한 것 검사
+                    self.pwPlaceholderLabel.isHidden = false
+                } else {
+                    self.pwSecureOnOff.isHidden = false
+                }
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    func didSelectButton(selectedButton: UIButton?) -> UIButton? {
+        guard let index = kindRadioBtns.firstIndex(where: { button in button.isSelected }) else { return nil }
+        
+        return kindRadioBtns[index]
+    }
     
     func reload() {
         let height = tagCollectionView.collectionViewLayout.collectionViewContentSize.height
@@ -155,7 +274,7 @@ class TVSetting: XibView {
     
     
     // MARK: 방송제목 문자열 검사
-    func validTitle() {
+    func validTitle(completion: ((Any) -> Void)?) {
         let titleFieldText = titleField.text!//.trimmingCharacters(in: .whitespaces)
         let postData = [
             "cmd" : "isContainFtvBadWord",
@@ -178,12 +297,21 @@ class TVSetting: XibView {
                     print(result)
                     if result["retvalue"].boolValue == true { // 금지어 있음
                         Toast.show("제목에 금지단어가 포함되어 있습니다.", on: .visibleView)
+                        if let callback = completion {
+                            callback(true)
+                        }
                     } else if result["retvalue"].boolValue == false { // 금지어 없음
                         Toast.show("\(titleFieldText)", on: .visibleView)
+                        if let callback = completion {
+                            callback(false)
+                        }
                     }
                 case .failure:
-                    
+                    if let callback = completion {
+                        callback(["retmsg" : "9999"])
+                    }
                     print("문자열 검사 체크 오류")
+                    
                 }
             }
     }
@@ -252,7 +380,7 @@ extension TVSetting: UICollectionViewDelegate, UICollectionViewDataSource {
             
             cell.isSelected = (lastSelectedIndexPath == indexPath)
             // 모든 셀의 isSelected를 false로 만들어주기
-            
+            // 초기에 셀 그릴때만 작동
             
             return cell
         }
@@ -261,16 +389,18 @@ extension TVSetting: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("셀 선택선택 \(indexPath)")
-        guard lastSelectedIndexPath != indexPath else { return }
+        guard lastSelectedIndexPath != indexPath else { return } // 다른것만 선택되게 걸러주기
         
-        if let index = lastSelectedIndexPath {
-            let cell = collectionView.cellForItem(at: index) as! LiveTag
+        if let lastidx = lastSelectedIndexPath { // 마지막선택 인덱스
+            let cell = collectionView.cellForItem(at: lastidx) as! LiveTag // 마지막 선택된 셀을 찾고, 선택 취소해주기
             cell.isSelected = false
+            log.d("선택했던것 다시 선택해서 취소하기 \(lastidx.row)")
         }
         
-        let cell = collectionView.cellForItem(at: indexPath) as! LiveTag
+        let cell = collectionView.cellForItem(at: indexPath) as! LiveTag // 내가 선택한 셀을 찾고, 선책하기
         cell.isSelected = true
         print("\(letters[indexPath.row]) == \(cell.tagName.text!)")
+        log.d("선택 해주기 \(indexPath.row)")
         lastSelectedIndexPath = indexPath
     }
    
@@ -282,8 +412,8 @@ extension TVSetting: UICollectionViewDelegate, UICollectionViewDataSource {
 // MARK: 정규식 이용해서 이모티콘 제외한 문자만 입력가능하게 하기
 extension TVSetting: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // textField.text!.count + string.count - range.length > 20
         
-        /*
         if textField == titleField {
             let utf8Char = string.cString(using: .utf8)
             let isBackSpace = strcmp(utf8Char, "\\b")
@@ -306,23 +436,36 @@ extension TVSetting: UITextFieldDelegate {
                 return count <= 20
             }
         }
-
-        return false */
-    
-        if let char = string.cString(using: .utf8) {
-            let isBackSpace = strcmp(char, "\\b")
-            if isBackSpace == -92 {
-                return true
-            }
-        }
         
         if textField == titleField {
             guard textField.text!.count <= 20 else { return false }
         } else if textField == passwordField {
-            guard textField.text!.count <= 4 else { return false }
+            guard textField.text!.count < 4 else {
+                passwordField.resignFirstResponder()
+                return false
+            }
+            return true
         }
-        
-        
-        return true
+
+        return false
+    
+//        if let char = string.cString(using: .utf8) {
+//            let isBackSpace = strcmp(char, "\\b")
+//            if isBackSpace == -92 {
+//                return true
+//            }
+//        }
+//
+//        if textField == titleField {
+//            guard textField.text!.count <= 20 else { return false }
+//        } else if textField == passwordField {
+//            guard textField.text!.count < 4 else {
+//                passwordField.resignFirstResponder()
+//                return false
+//            }
+//        }
+//
+//
+//        return true
     }
 }

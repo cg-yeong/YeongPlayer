@@ -23,20 +23,4 @@ class YeongAlert {
 /*
  커스텀 알림창 총 관리
  */
-class AlertAction {
-    var title : String = ""
-    var action : (() -> Void) = {}
-    
-    init(title : String = "", action : (()->Void)? = nil) {
-        self.title = title
-        if let doit = action {
-            self.action = doit
-        }else{
-            self.action = {}
-        }
-    }
-}
-
-
-    
     
