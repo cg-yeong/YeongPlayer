@@ -369,7 +369,6 @@ extension TVSetting: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "liveTag", for: indexPath) as? LiveTag {
             cell.configCell() // cornerRadius
-            cell.idx = indexPath.item
             cell.tagName.text = letters[indexPath.item]
            
             if indexPath.row == 0 {
