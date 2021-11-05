@@ -13,11 +13,22 @@ extension TV {
     
     func bind() {
         
+        let floating_camera_tap = UITapGestureRecognizer()
+        
+        
+        floating_camera_view.addGestureRecognizer(floating_camera_tap)
+        self.addGestureRecognizer(videoView_pan)
+        
         floatingToggleBtn.rx.tap
             .bind { (_) in
                 
                 self.toggleFloating()
                 
+            }.disposed(by: bag)
+        
+        floating_camera_tap.rx.event
+            .bind { _ in
+                self.toggleFloating()
             }.disposed(by: bag)
         
         floating_change_btn.rx.tap
