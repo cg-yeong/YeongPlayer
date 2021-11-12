@@ -195,7 +195,7 @@ class TVSetting: XibView {
 //                        return
 //                    }
 //                }
-                
+                //ㅁㄴㅇㄹ
                 self.validTitle(completion: { retData in
                     let result = retData as! Bool
                     if result == true {
