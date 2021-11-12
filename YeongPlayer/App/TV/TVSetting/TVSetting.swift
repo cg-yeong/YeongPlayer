@@ -22,8 +22,8 @@ class TVSetting: XibView {
     @IBOutlet weak var placeholderView: UIStackView!
     
     @IBOutlet weak var liveModeView: UIView!
-    @IBOutlet weak var generalLive: KindRadioButton!
-    @IBOutlet weak var secretLive: KindRadioButton!
+    @IBOutlet weak var generalLive: TypeRadioButton!
+    @IBOutlet weak var secretLive: TypeRadioButton!
     
     
     @IBOutlet weak var passwordField: UITextField!
@@ -35,7 +35,7 @@ class TVSetting: XibView {
     
     @IBOutlet weak var liveStartBtn: UIButton!
     
-    @IBOutlet var kindRadioBtns: [KindRadioButton]!
+    @IBOutlet var kindRadioBtns: [TypeRadioButton]!
     var shouldLetDeSelect = false // 라디오 버튼 선택한게 다시 눌러서 취소 될수 있는지
     
     private var lastSelectedIndexPath: IndexPath?
