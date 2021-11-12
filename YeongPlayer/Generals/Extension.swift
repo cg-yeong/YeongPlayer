@@ -250,7 +250,7 @@ class NoPasteTextField: UITextField {
     }
 }
 
-class TypeRadioButton: UIButton {
+class KindRadioButton: UIButton {
     override var isSelected: Bool {
         didSet {
             if self.isSelected {
